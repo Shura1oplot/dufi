@@ -19,10 +19,10 @@ ctypes.WinDLL("libxml2.dll")
 from lxml import etree
 
 
-class XML2DB(object):
+class XML2DB():
 
     def __init__(self):
-        super(XML2DB, self).__init__()
+        super().__init__()
 
         self.elem_nest = {}
         self.elem_size = {}
@@ -97,7 +97,7 @@ def get_attr_key(elem, attr):
 class XML2DBSchema(XML2DB):
 
     def __init__(self, ignore_attrs=None):
-        super(XML2DBSchema, self).__init__()
+        super().__init__()
 
         self.ignore_attrs = set(ignore_attrs) or set()
 
@@ -168,10 +168,10 @@ class XML2DBSchema(XML2DB):
 ################################################################################
 
 
-class ProcessOpen(object):
+class ProcessOpen():
 
     def __init__(self, cwd=None):
-        super(ProcessOpen, self).__init__()
+        super().__init__()
 
         self.cwd = cwd
         self.proc = None
@@ -205,7 +205,7 @@ class XML2DBConvert(XML2DB):
                  out_mode="plain",  # plain, compress, process
                  output_dir=None,
                  cmd_line=None):
-        super(XML2DB, self).__init__()
+        super().__init__()
 
         self.out_mode = out_mode
         self.output_dir = output_dir

@@ -7,10 +7,10 @@ from glob import glob
 from ..utils import echo
 
 
-class GUIOpt(object):
+class GUIOpt():
 
     def __init__(self, parser):
-        super(GUIOpt, self).__init__()
+        super().__init__()
 
         self.is_fake = isinstance(parser, FakeParser)
 
@@ -21,10 +21,10 @@ class GUIOpt(object):
             return {}
 
 
-class FakeParser(object):
+class FakeParser():
 
     def __init__(self):
-        super(FakeParser, self).__init__()
+        super().__init__()
 
         self.command = None
         self.help = None

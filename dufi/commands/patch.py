@@ -49,3 +49,4 @@ def patch(csv_file, patch_file, reverse=False, dry_run=False, force=False):
             applied_count += 1
 
     echo("Replacements applied: {} / {}".format(applied_count, read_count))
+    return 0

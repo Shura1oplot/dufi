@@ -100,6 +100,8 @@ Quotation marks inside text fields must be doubled.
                   add_filename=args.add_filename,
                   drop_first_row=drop_first_row)
 
+        return 0
+
     ############################################################################
 
     @classmethod

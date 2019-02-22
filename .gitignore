@@ -7,3 +7,4 @@ dufi-*.7z
 *.pyd
 *.pyx
 *.c
+config.bat

@@ -18,7 +18,7 @@ class StopConverting(Exception):
     pass
 
 
-class ExcelConverter(object):
+class ExcelConverter():
 
     def __init__(self, callback, sheet_mask, file_mask,
                  row_start=0, row_stop=0, last_column=None,

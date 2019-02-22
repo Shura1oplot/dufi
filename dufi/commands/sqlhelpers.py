@@ -27,10 +27,10 @@ def get_sql_name_str(s):
     return get_sql_str(get_sql_name(s))
 
 
-class _FormatWrapper(object):
+class _FormatWrapper():
 
     def __init__(self, value, n=0):
-        super(_FormatWrapper, self).__init__()
+        super().__init__()
         self._value = value
         self._n = n
 
@@ -73,10 +73,10 @@ class _FormatWrapper(object):
         return str(self._value)
 
 
-class _FormatEnum(object):
+class _FormatEnum():
 
     def __init__(self, values):
-        super(_FormatEnum, self).__init__()
+        super().__init__()
         self._values = values
 
     def __getattr__(self, name):

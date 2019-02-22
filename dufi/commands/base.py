@@ -63,7 +63,7 @@ class dufi_commands(list, metaclass=dufi_commands_meta):
 class InvalidCommandArgs(Exception):
 
     def __init__(self, error_text):
-        super(InvalidCommandArgs, self).__init__()
+        super().__init__()
 
         self.error_text = error_text
 
@@ -74,7 +74,7 @@ class CommandMeta(type):
         return "<Command({})>".format(cls.gui_command)
 
 
-class Command(object, metaclass=CommandMeta):
+class Command(metaclass=CommandMeta):
 
     cli_command = None
     cli_command_aliases = ()

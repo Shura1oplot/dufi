@@ -13,7 +13,7 @@ class XML2DBScripts(XML2DB):
     BCP = 'bcp "%DATABASE%.dbo.{}" in "{}" -S "%SERVER%" -T -m 0 -w -k'
 
     def __init__(self, output_dir=None):
-        super(XML2DBScripts, self).__init__()
+        super().__init__()
 
         self.output_dir = output_dir
 

@@ -1,8 +1,6 @@
 # [SublimeLinter @python:3]
 # cython: language_level=3
 
-from os import SEEK_CUR
-
 
 TRUE = 1  #< DEF
 FALSE = 0  #< DEF

@@ -28,12 +28,12 @@ from .balloontip import balloon_tip
 from .. import dufi_commands, InvalidCommandArgs, __version__
 
 
-class CommandExecution(object):
+class CommandExecution():
 
     system_encoding = locale.getpreferredencoding() or "utf-8"
 
     def __init__(self, view):
-        super(CommandExecution, self).__init__()
+        super().__init__()
 
         self.view = view
 
@@ -175,7 +175,7 @@ class Application(boxes.GUIApplication):
     commands = dufi_commands.get_names()
 
     def __init__(self, master):
-        super(Application, self).__init__(master)
+        super().__init__(master)
 
         self.hidden_vars = {"files": []}
         self.cmd = CommandExecution(self)
