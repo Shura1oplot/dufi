@@ -1,0 +1,11 @@
+{
+    "active_command": "Excel to CSV",
+    "excel_sheet": "*Метод*",
+    "excel_output": "!\\!.!.csv",
+    "excel_row_start": 5,
+    "excel_row_stop": 15,
+    "excel_last_column": "CC",
+    "excel_length_limit": 255,
+    "excel_truncate_4k": "AA,BB",
+    "excel_fix_data_range": 1
+}

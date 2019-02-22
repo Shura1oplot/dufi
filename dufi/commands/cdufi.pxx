@@ -1,0 +1,385 @@
+# [SublimeLinter @python:3]
+# cython: language_level=3
+
+from os import SEEK_CUR
+
+
+TRUE = 1  #< DEF
+FALSE = 0  #< DEF
+
+
+#? def count_seps_no_quoting(fpi, fpo, size, unsigned char separator,
+#?                           int expected_count):
+def count_seps_no_quoting(fpi, fpo, size, separator, expected_count):
+    fpi_tell = fpi.tell
+
+    valid = TRUE  #< cdef bint
+    fixable = TRUE  #< cdef bint
+
+    progress = None
+
+    if expected_count > 0:
+        fpo.write("{}: {}\n".format(0, expected_count))
+
+    #< cdef bytes line
+    #< cdef int n
+    #< cdef int count
+
+    for n, line in enumerate(fpi, 1):
+        count = line.count(separator)
+
+        if count != expected_count:
+            fpo.write("{}: {}\n".format(n, count))
+            fpo.flush()
+
+            if expected_count < 0:
+                expected_count = count
+
+            else:
+                valid = FALSE
+
+                if count > expected_count:
+                    fixable = FALSE
+
+        new_progess = 100 * fpi_tell() // size
+
+        if new_progess != progress:
+            print("Progress: {}%".format(new_progess), flush=True)
+            progress = new_progess
+
+    if progress != 100:
+        print("Progress: 100%", flush=True)
+
+    return valid, fixable
+
+
+#? def count_seps_with_quotes(fpi, fpo, size, unsigned char separator,
+#?                            unsigned char qualifier, int expected_count):
+def count_seps_with_quotes(fpi, fpo, size, separator, qualifier,
+                           expected_count):  #< #
+    fpi_tell = fpi.tell
+    valid = TRUE  #< cdef bint
+    fixable = TRUE  #< cdef bint
+
+    # doubled double quotes
+    # it is used to escape double quotes inside double quotes
+    # example: "OOO ""Roga & Kopyta"""
+    doubled_quote = FALSE  #< cdef bint
+
+    progress = None
+
+    if expected_count > 0:
+        fpo.write("{}: {}\n".format(0, expected_count))
+
+    #< cdef bytes line
+    #< cdef int n
+    #< cdef bint quoted
+    #< cdef int count
+    #< cdef int i
+    #< cdef unsigned char cc
+    #< cdef unsigned char nc
+
+    for n, line in enumerate(fpi, 1):
+        quoted = FALSE
+        count = 0
+
+        for i, cc in enumerate(line):
+            if quoted:
+                if cc != qualifier:
+                    continue
+
+                if doubled_quote:
+                    doubled_quote = FALSE
+
+                else:
+                    if i < len(line) - 2:
+                        nc = line[i+1]
+                    else:
+                        nc = -1
+
+                    if nc == qualifier:
+                        doubled_quote = TRUE
+                    else:
+                        quoted = FALSE
+
+            else:
+                if cc == separator:
+                    count += 1
+
+                elif cc == qualifier:
+                    quoted = TRUE
+
+        if count != expected_count:
+            fpo.write("{}: {}\n".format(n, count))
+            fpo.flush()
+
+            if expected_count < 0:
+                expected_count = count
+
+            else:
+                valid = FALSE
+
+                if count > expected_count:
+                    fixable = FALSE
+
+        new_progess = 100 * fpi_tell() // size
+
+        if new_progess != progress:
+            print("Progress: {}%".format(new_progess), flush=True)
+            progress = new_progess
+
+    if progress != 100:
+        print("Progress: 100%", flush=True)
+
+    return valid, fixable
+
+
+#? def merge_columns(fpi, fpo, size, unsigned char separator,
+#?                   int join_column, unsigned char replacement,
+#?                   int excepted_count):
+def merge_columns(fpi, fpo, size, separator, join_column,
+                  replacement, excepted_count):  #< #
+    fpi_readline = fpi.readline
+    fpi_tell = fpi.tell
+
+    sep_count = join_column - 1  #< cdef int
+
+    #< cdef bytes line
+
+    if excepted_count < 0:
+        line = fpi_readline()
+        excepted_count = line.count(separator)
+
+    progress = None
+
+    #< cdef list offsets
+    #< cdef object pos
+    #< cdef int i
+    #< cdef unsigned char x
+
+    while TRUE:
+        pos = fpi_tell()
+        line = fpi_readline()
+
+        if not line:
+            break
+
+        offsets = []
+
+        for i, x in enumerate(line):
+            if x == separator:
+                offsets.append(i)
+
+        if len(offsets) > excepted_count:
+            for i in offsets[sep_count:sep_count+len(offsets)-excepted_count]:
+                fpo.write("{}:{}:{}\n".format(pos+i, separator, replacement))
+
+        new_progess = 100 * fpi_tell() // size
+
+        if new_progess != progress:
+            print("Progress: {}%".format(new_progess), flush=True)
+            progress = new_progess
+
+    if progress != 100:
+        print("Progress: 100%", flush=True)
+
+
+#? def concat_lines(fpi, fpo, size, unsigned char separator,
+#?                  int excepted_count):
+def concat_lines(fpi, fpo, size, separator, excepted_count):
+    fpi_readline = fpi.readline
+    fpi_tell = fpi.tell
+
+    fpo_write = fpo.write
+    fpo_flush = fpo.flush
+
+    #< cdef bytes line
+
+    if excepted_count < 0:
+        line = fpi_readline()
+        excepted_count = line.count(separator)
+
+    progress = None
+
+    #< cdef int count
+    #< cdef object pos
+
+    prev_line = b""  #< cdef bytes
+
+    while TRUE:
+        line = fpi_readline()
+
+        if not line:
+            break
+
+        count = line.count(separator)
+
+        if not count:  # перенос строки в последней колонке
+            pos = fpi_tell() - len(line)
+
+            if len(prev_line) >= 2 and prev_line[-2] == 13:
+                fpo_write("{}:13:32\n".format(pos - 2))
+
+            fpo_write("{}:10:32\n".format(pos - 1))
+            fpo_flush()
+
+        else:
+            while count < excepted_count:
+                pos = fpi_tell()
+
+                if len(line) >= 2 and line[-2] == 13:
+                    fpo_write("{}:13:32\n".format(pos - 2))
+
+                fpo_write("{}:10:32\n".format(pos - 1))
+                fpo_flush()
+
+                line = fpi_readline()
+
+                if not line:
+                    break
+
+                count += line.count(separator)
+
+        prev_line = line
+
+        new_progess = 100 * fpi_tell() // size
+
+        if new_progess != progress:
+            print("Progress: {}%".format(new_progess), flush=True)
+            progress = new_progess
+
+    if progress != 100:
+        print("Progress: 100%", flush=True)
+
+
+#? def repair_csv(fpi, fpo, size,
+#?                unsigned char separator,
+#?                unsigned char qualifier,
+#?                unsigned char replacement,
+#?                bint doubled_quotes,
+#?                bint concat_lines):
+def repair_csv(fpi, fpo, size, separator, qualifier, replacement,
+               doubled_quotes, concat_lines):  #< #
+    offset = 0
+    quoted = FALSE  #< cdef bint
+    doubled_quote = FALSE  #< cdef bint
+    count = 0  #< cdef int
+
+    progress = None
+
+    #< cdef bytes line
+    #< cdef int i
+    #< cdef unsigned char cc
+    #< cdef unsigned char nc
+    #< cdef unsigned char nnc
+
+    for line in fpi:
+        for i, cc in enumerate(line):
+            if quoted:
+                if i < len(line) - 1:
+                    nc = line[i+1]
+                else:
+                    nc = -1
+
+                if cc == 13:
+                    if concat_lines or nc != 10:
+                        fpo.write("{}:{}:32\n".format(offset + i, cc))
+
+                    count += 1
+                    continue
+
+                if cc == 10:
+                    if concat_lines:
+                        fpo.write("{}:{}:32\n".format(offset + i, cc))
+
+                    else:
+                        quoted = FALSE
+
+                    count += 1
+                    continue
+
+                if cc != qualifier:
+                    continue
+
+                if doubled_quotes:
+                    if doubled_quote:
+                        doubled_quote = FALSE
+                        continue
+
+                    if nc == qualifier:
+                        doubled_quote = TRUE
+                        continue
+
+                if nc == separator or nc == 10:
+                    quoted = FALSE
+                    continue
+
+                if nc == 13:
+                    if i < len(line) - 2:
+                        nnc = line[i+2]
+                    else:
+                        nnc = -1
+
+                    if nnc == 10:
+                        quoted = FALSE
+                        continue
+
+                fpo.write("{}:{}:{}\n".format(offset + i, qualifier, replacement))
+                count += 1
+
+            elif cc == qualifier:
+                if i == 0 or line[i-1] == separator:
+                    quoted = TRUE
+                    continue
+
+                fpo.write("{}:{}:{}\n".format(offset + i, qualifier, replacement))
+                count += 1
+
+        offset += len(line)
+
+        new_progess = 100 * offset // size
+
+        if new_progess != progress:
+            print("Progress: {}%".format(new_progess), flush=True)
+            progress = new_progess
+
+    if progress != 100:
+        print("Progress: 100%", flush=True)
+
+    return count
+
+
+def cr_to_space(fp, size):
+    fp_read = fp.read
+    fp_write = fp.write
+    fp_seek = fp.seek
+
+    progress = None
+
+    #< cdef bytes buf
+    #< cdef unsigned char c
+    #< cdef unsigned int i
+    pos = 0
+
+    while True:
+        buf = fp_read(1_000_000)
+
+        if not buf:
+            break
+
+        for i, c in enumerate(buf):
+            if c == 13:
+                fp_seek(pos + i)
+                fp_write(b" ")
+
+        pos += len(buf)
+        fp_seek(pos)
+
+        new_progess = 100 * pos // size
+
+        if new_progess != progress:
+            print("Progress: {}%".format(new_progess), flush=True)
+            progress = new_progess
+
+    if progress != 100:
+        print("Progress: 100%", flush=True)

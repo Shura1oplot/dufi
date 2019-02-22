@@ -1,0 +1,5 @@
+comtypes>=1.1.7
+cx-Freeze==5.1.1
+Cython>=0.29.5
+pip>=18.1
+setuptools>=40.8.0

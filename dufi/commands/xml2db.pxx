@@ -1,0 +1,341 @@
+# [SublimeLinter @python:3]
+
+import sys
+import os
+import codecs
+import string
+import random
+import gzip
+import bz2
+import lzma
+import json
+import subprocess
+
+# cx_freeze hack for lxml
+import ctypes
+ctypes.WinDLL("libxslt.dll")
+ctypes.WinDLL("libexslt.dll")
+ctypes.WinDLL("libxml2.dll")
+from lxml import etree
+
+
+class XML2DB(object):
+
+    def __init__(self):
+        super(XML2DB, self).__init__()
+
+        self.elem_nest = {}
+        self.elem_size = {}
+
+    def load_schema(self, file):
+        with open(file, "r", encoding="utf-8") as fp:
+            data = json.load(fp)
+
+        self.elem_nest = data["nest"]
+        self.elem_size = data["size"]
+
+    def dump_schema(self, file):
+        nest = {}
+
+        for k, v in self.elem_nest.items():
+            nest[k] = list(sorted(v))
+
+        with open(file, "w", encoding="utf-8") as fp:
+            json.dump({"nest": nest,
+                       "size": self.elem_size}, fp,
+                      sort_keys=True, indent=4)
+
+
+def _open_file(filename):
+    if not filename:
+        return sys.stdin.buffer
+
+    s = filename.lower()
+
+    if s.endswith(".gz"):
+        return gzip.open(filename, "rb")
+
+    if s.endswith(".bz2"):
+        return bz2.open(filename, "rb")
+
+    if s.endswith(".xz") or s.endswith(".lzma"):
+        return lzma.open(filename, "rb")
+
+    return open(filename, "rb")
+
+
+#? cdef str drop_namespace(str tag):
+def drop_namespace(tag):
+    if tag.startswith("{"):
+        return tag[tag.find("}") + 1:]
+
+    return tag
+
+
+#? cdef str get_elem_key(object elem):
+def get_elem_key(elem):
+    parent = elem.getparent()  #< cdef object
+    #< cdef str parent_tag
+
+    if parent is not None:
+        parent_tag = parent.tag
+    else:
+        parent_tag = "xml"
+
+    return "{}_{}".format(drop_namespace(parent_tag),
+                          drop_namespace(elem.tag))
+
+
+#? cdef str get_attr_key(object elem, str attr):
+def get_attr_key(elem, attr):
+    return "{}_@{}".format(get_elem_key(elem), attr)
+
+
+################################################################################
+
+
+class XML2DBSchema(XML2DB):
+
+    def __init__(self, ignore_attrs=None):
+        super(XML2DBSchema, self).__init__()
+
+        self.ignore_attrs = set(ignore_attrs) or set()
+
+    def collect_stats(self, file):
+        elem_nest = self.elem_nest  #< cdef dict
+        elem_size = self.elem_size  #< cdef dict
+        ignore_attrs = self.ignore_attrs  #< cdef set
+
+        fp = _open_file(file)  #< cdef object
+
+        #< cdef object _
+        #< cdef object elem
+
+        #< cdef str elem_key
+
+        #< cdef str attr
+        #< cdef object value
+
+        #< cdef str attr_key
+
+        #< cdef object parent
+        #< cdef str parent_key
+
+        for _, elem in etree.iterparse(fp, events=("end",)):
+            elem_key = get_elem_key(elem)
+
+            if elem_key not in elem_nest:
+                elem_nest[elem_key] = set()
+
+            elem_size[elem_key] = max(elem_size.get(elem_key, 0),
+                                      len((elem.text or "").strip()))
+
+            for attr, value in elem.items():
+                if "*_@" + attr in ignore_attrs:
+                    continue
+
+                attr_key = get_attr_key(elem, attr)
+
+                if attr_key in ignore_attrs:
+                    continue
+
+                elem_nest[elem_key].add(attr_key)
+
+                if attr_key not in elem_nest:
+                    elem_nest[attr_key] = set()
+
+                elem_size[attr_key] = max(elem_size.get(attr_key, 0),
+                                          len(value or ""))
+
+            parent = elem.getparent()
+
+            if parent is not None:
+                parent_key = get_elem_key(parent)
+
+                if parent_key not in elem_nest:
+                    elem_nest[parent_key] = set()
+
+                elem_nest[parent_key].add(elem_key)
+
+            elem.clear()
+
+            while elem.getprevious() is not None:
+                del elem.getparent()[0]
+
+        # fp.close()
+
+
+################################################################################
+
+
+class ProcessOpen(object):
+
+    def __init__(self, cwd=None):
+        super(ProcessOpen, self).__init__()
+
+        self.cwd = cwd
+        self.proc = None
+        self.write = None
+
+    def open(self, cmd_line):
+        self.proc = subprocess.Popen(
+            args=cmd_line,
+            stdin=subprocess.PIPE,
+            shell=True,
+            cwd=self.cwd,
+            bufsize=1,
+            universal_newlines=True,
+            encoding="utf-16",
+            errors="replace")
+        self.write = self.proc.stdin.write
+
+    def close(self):
+        self.proc.stdin.flush()
+        self.proc.stdin.close()
+        self.proc.wait()
+        self.proc = None
+
+
+class XML2DBConvert(XML2DB):
+
+    ATTR_ID = "dufi_id_{}".format(
+        "".join(random.choice(string.ascii_uppercase) for _ in range(6)))
+
+    def __init__(self,
+                 out_mode="plain",  # plain, compress, process
+                 output_dir=None,
+                 cmd_line=None):
+        super(XML2DB, self).__init__()
+
+        self.out_mode = out_mode
+        self.output_dir = output_dir
+        self.cmd_line = cmd_line
+
+        self.seq_num = 1
+        self.out_files = {}
+
+    def feed(self, file):
+        dufi_attr_id = self.ATTR_ID  #< cdef str
+        elem_size = self.elem_size  #< cdef dict
+        elem_nest = self.elem_nest  #< cdef dict
+        out_files = self.out_files  #< cdef dict
+        seq_num = self.seq_num  #< cdef int
+
+        fp = _open_file(file)  #< cdef object
+
+        #< cdef str event
+        #< cdef object elem
+
+        #< cdef str elem_key
+        #< cdef str elem_id
+        #< cdef dict elem_data
+
+        #< cdef str attr
+        #< cdef str attr_value
+
+        #< cdef str attr_key
+
+        #< cdef object parent
+        #< cdef str parent_id
+
+        #< cdef list values
+        #< cdef str key
+        #< cdef object x
+
+        for event, elem in etree.iterparse(fp, events=("start", "end")):
+            if event == "start":
+                elem.attrib[dufi_attr_id] = str(seq_num)
+                seq_num += 1
+                continue
+
+            elem_key = get_elem_key(elem)
+            elem_id = elem.attrib[dufi_attr_id]
+            elem_data = {}
+
+            for attr, attr_value in elem.items():
+                if attr == dufi_attr_id:
+                    continue
+
+                attr_key = get_attr_key(elem, attr)
+
+                if not elem_size.get(attr_key):
+                    continue
+
+                elem_data[attr_key] = attr_value
+
+            parent = elem.getparent()
+
+            if parent is not None:
+                parent_id = parent.attrib[dufi_attr_id]
+            else:
+                parent_id = "0"
+
+            values = []
+            values.append(elem_id)
+            values.append(parent_id)
+
+            if elem_size[elem_key]:
+                values.append((elem.text or "").strip())
+
+            for key in elem_nest[elem_key]:
+                if "@" in key and elem_size[key]:
+                    values.append(elem_data.get(key, ""))
+
+            if elem_key not in out_files:
+                out_files[elem_key] = self._open(elem_key)
+
+            out_files[elem_key].write("\t".join(
+                str("" if x is None else x)
+                .replace("\t", " ").replace("\n", " ").replace("\r", " ")
+                for x in values))
+            out_files[elem_key].write("\n")
+
+            elem.clear()
+
+            while elem.getprevious() is not None:
+                del elem.getparent()[0]
+
+        # fp.close()
+        self.seq_num = seq_num
+
+    def finalize(self):
+        for fp in self.out_files.values():
+            fp.close()
+
+        self.out_files = {}
+
+    def _open(self, elem_key):
+        if self.out_mode in ("plain", "compress"):
+            if not self.output_dir:
+                raise ValueError("--output-dir required but not specified")
+
+            if not os.path.exists(self.output_dir):
+                os.makedirs(self.output_dir)
+
+        file = os.path.join(self.output_dir, elem_key + self._get_ext())
+
+        if self.out_mode == "plain":
+            return open(file, "w", encoding="utf-16", errors="replace")
+
+        elif self.out_mode == "compress":
+            fp = lzma.open(file, "wt", encoding="utf-16", errors="replace")
+            fp.buffer.write(codecs.BOM_UTF16_LE)
+            fp.buffer.flush()
+            return fp
+
+        elif self.out_mode == "process":
+            if not self.cmd_line:
+                raise ValueError("--cmd-line required but not specified")
+
+            fp = ProcessOpen(self.output_dir)
+            fp.open(self.cmd_line.format(table=elem_key.replace('"', '""')))
+            return fp
+
+        else:
+            raise ValueError(self.out_mode)
+
+    def _get_ext(self):
+        if self.out_mode == "compress":
+            return ".txt.xz"
+
+        return ".txt"
