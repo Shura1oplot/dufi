@@ -28,6 +28,9 @@ def main(argv=sys.argv):
         if d.is_dir():
             shutil.rmtree(d)
 
+    if Path("config.bat").exists():
+        Path("config.bat").unlink()
+
     print("clean.py: done!")
 
 

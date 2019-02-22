@@ -1,7 +1,0 @@
-@SET "TCL_LIBRARY=C:\Python3\envs\mini36\tcl\tcl8.6"
-@SET "TK_LIBRARY=C:\Python3\envs\mini36\tcl\tk8.6"
-@SET "VCVARS32=%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
-@SET "VCVARS64=%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-@SET "SDK_VERSION=10.0.17763.0"
-@SET "SDK_DIR=%ProgramFiles(x86)%\Windows Kits\10\Include\%SDK_VERSION%"
-@SET "VERSION=0.9.10"
