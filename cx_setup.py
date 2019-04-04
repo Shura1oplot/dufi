@@ -14,7 +14,6 @@ build_exe_options = {
     "build_exe": os.path.abspath("build_exe"),
     "packages": ["decimal", "gzip", "idna", "lxml"],  # lxml._elementpath?
     "excludes": ["numpy", "pandas", "multiprocessing", "_ssl"],
-    "include_files": ["resources", ],
     "include_msvcr": True,
 }
 

@@ -28,7 +28,7 @@ from . import (
     cmd_join_rows,
     cmd_genscript,
     cmd_excel,
-    cmd_workingtime,
+    cmd_merge_csv,
     cmd_xml2csv,
     cmd_other,
 )

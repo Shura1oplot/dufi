@@ -16,13 +16,16 @@ class ScriptCommand(Command):
 
     gui_order = 10
     gui_command = "Excel to CSV"
-    gui_description = "Convert Excel spreadsheets to CSV files."
+    gui_description = "Convert Excel spreadsheets into CSV files."
     gui_files_info_label_id = "LabelExcelFilesInfo"
     gui_info_message_widget = "MessageExcelInfo"
 
-    gui_variables = ("excel_sheet", "excel_output", "excel_row_start", "excel_row_stop",
-                     "excel_last_column", "excel_length_limit", "excel_truncate_1k",
-                     "excel_truncate_4k", "excel_fix_data_range")
+    gui_variables = ("excel_sheet", "excel_output",
+                     "excel_row_start", "excel_row_stop",
+                     "excel_find_header", "excel_find_header_limit",
+                     "excel_last_column", "excel_length_limit",
+                     "excel_truncate_1k", "excel_truncate_4k",
+                     "excel_fix_data_range")
 
     gui_help_tooltips = {
 
@@ -44,11 +47,19 @@ With mask '!\\NEW\\!.!' output file will be 'C:\\JET\\NEW\\journal_entries.csv.
 """,
 
         "LabelExcelRowStartHelp": """
-Start converting sheet from N row (skip N-1 first rows).
+Start converting sheet from Nth row (skip N-1 first rows).
 """,
 
         "LabelExcelRowStopHelp": """
-Stop converting sheet reaching N row.
+Stop converting sheet reaching Nth row.
+""",
+
+        "LabelExcelFindHeaderHelp": """
+Start converting sheet from the row which contains specified text.
+""",
+
+        "LabelExcelFindHeaderLimitHelp": """
+Stop looking for a header if specified text was not found within N rows.
 """,
 
         "LabelExcelLastColumnHelp": """
@@ -98,6 +109,8 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
             file_mask=args.output.strip(),
             row_start=args.row_start,
             row_stop=args.row_stop,
+            header_str=args.find_header,
+            find_header_limit=args.find_header_limit,
             last_column=args.last_column,
             max_len_default=args.length_limit,
             max_len_custom=max_len_custom,
@@ -137,6 +150,18 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
             help="stop converting on reaching N row in excel sheet",
         )
         parser.add_argument(
+            "-x", "--find-header",
+            metavar="TEXT",
+            help="start converting from the row which contains specified text",
+        )
+        parser.add_argument(
+            "-m", "--find-header-limit",
+            default=10,
+            metavar="N",
+            help=("cancel `--find-header` if specified text was not found "
+                  "within N rows (default: 10)"),
+        )
+        parser.add_argument(
             "-c", "--last-column",
             metavar="COL",
             help="convert data which lays between A and COL",
@@ -145,7 +170,7 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
             "-i", "--length-limit",
             type=int,
             metavar="N",
-            help="truncate value length to N chars",
+            help="truncate length of value to N chars",
         )
         parser.add_argument(
             "-u", "--truncate-1k",
@@ -163,7 +188,7 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
             "-j", "--fix-data-range",
             action="store_true",
             help=("stop converting if 1000 equal rows found one after another "
-                  "(incorrect data range in Excel 2007+)"),
+                  "(broken data range in Excel 2007+)"),
         )
         cls._add_files_arguments(parser)
 
@@ -181,6 +206,7 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
 
         for var_name, var_desc in (("excel_row_start", "Start row"),
                                    ("excel_row_stop", "Stop row"),
+                                   ("excel_find_header_limit", "Find header limit"),
                                    ("excel_length_limit", "Length limit")):
             value = var[var_name].strip()
 
@@ -232,6 +258,16 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
 
         if row_stop:
             args.extend(["--row-stop", row_stop])
+
+        find_header = var.excel_find_header.strip()
+
+        if find_header:
+            args.extend(["--find-header", find_header])
+
+        find_header_limit = var.excel_find_header.strip()
+
+        if find_header_limit:
+            args.extend(["--find-header-limit", find_header_limit])
 
         last_column = var.excel_last_column.strip().upper()
 

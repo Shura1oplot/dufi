@@ -3,6 +3,7 @@
 import os
 import codecs
 import re
+from pathlib import Path
 
 from .iconv import iconv
 
@@ -69,7 +70,7 @@ Quotation marks inside text fields must be doubled.
             file = os.path.abspath(file)
             file_out = os.path.abspath(format_file_path(args.output, file))
 
-            if file == file_out:
+            if Path(file) == Path(file_out):
                 echo("ERROR: input and output files must be different")
                 return 1
 

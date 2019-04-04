@@ -11,7 +11,7 @@ class OtherCommand(Command):
     cli_command_aliases = None
     cli_command_help = None
 
-    gui_order = 13
+    gui_order = 12
     gui_command = "Other..."
     gui_description = "All available DuFi commands."
     gui_files_info_label_id = "LabelOtherFilesInfo"

@@ -43,7 +43,7 @@ class OracleFixCommand(Command):
     cli_command_help = argparse.SUPPRESS  # http://bugs.python.org/issue22848
     cli_files_required = False
 
-    gui_order = 12
+    gui_order = 11
     gui_command = "XML to CSV"
     gui_description = "How to convert XML files to tabular using DuFi."
 

@@ -237,13 +237,17 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="2">
-                                              <property name="pad">0</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="3">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -612,13 +616,17 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="2">
-                                              <property name="pad">0</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="3">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -934,13 +942,17 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="2">
-                                              <property name="pad">0</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="3">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -1287,7 +1299,11 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -1457,17 +1473,21 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="2">
-                                              <property name="pad">0</property>
+                                              <property name="pad">20</property>
                                               <property name="weight">0</property>
                                             </row>
                                             <row id="3">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="4">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -2028,7 +2048,11 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -2198,7 +2222,11 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -2368,10 +2396,14 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="2">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -2630,10 +2662,17 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
+                                            </row>
+                                            <row id="2">
+                                              <property name="pad">20</property>
                                             </row>
                                             <row id="3">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -3012,11 +3051,26 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="pad">40</property>
+                                              <property name="pad">20</property>
                                               <property name="weight">0</property>
                                             </row>
                                             <row id="2">
+                                              <property name="pad">20</property>
+                                              <property name="weight">0</property>
+                                            </row>
+                                            <row id="3">
+                                              <property name="pad">20</property>
+                                            </row>
+                                            <row id="4">
+                                              <property name="pad">20</property>
+                                              <property name="weight">0</property>
+                                            </row>
+                                            <row id="5">
+                                              <property name="pad">20</property>
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
@@ -3139,7 +3193,7 @@
                                           </object>
                                         </child>
                                         <child>
-                                          <object class="ttk.Frame" id="FrameExcelParameters">
+                                          <object class="ttk.Frame" id="FrameExcelOutputParameters">
                                             <property name="height">200</property>
                                             <property name="style">WhiteFrame.TFrame</property>
                                             <property name="width">200</property>
@@ -3148,9 +3202,17 @@
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
                                               <property name="sticky">w</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">0</property>
+                                                </row>
+                                                <row id="3">
+                                                  <property name="pad">0</property>
+                                                </row>
+                                              </rows>
                                             </layout>
                                             <child>
-                                              <object class="ttk.Label" id="LabelExcelParametersCaptions">
+                                              <object class="ttk.Label" id="LabelExcelOutputParametersCaptions">
                                                 <property name="style">WhiteLabelBold.TLabel</property>
                                                 <property name="text" translatable="yes">Output parameters</property>
                                                 <layout>
@@ -3162,7 +3224,7 @@
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="ttk.Frame" id="FrameExcelParametersBody">
+                                              <object class="ttk.Frame" id="FrameExcelOutputParametersBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
                                                 <property name="width">200</property>
@@ -3178,25 +3240,31 @@
                                                     <row id="1">
                                                       <property name="pad">5</property>
                                                     </row>
+                                                    <row id="10">
+                                                      <property name="pad">0</property>
+                                                    </row>
                                                     <row id="2">
-                                                      <property name="pad">5</property>
+                                                      <property name="pad">0</property>
                                                     </row>
                                                     <row id="3">
-                                                      <property name="pad">5</property>
+                                                      <property name="pad">0</property>
                                                     </row>
                                                     <row id="4">
-                                                      <property name="pad">5</property>
+                                                      <property name="pad">0</property>
                                                     </row>
                                                     <row id="5">
-                                                      <property name="pad">5</property>
+                                                      <property name="pad">0</property>
                                                     </row>
                                                     <row id="6">
-                                                      <property name="pad">5</property>
+                                                      <property name="pad">0</property>
                                                     </row>
                                                     <row id="7">
-                                                      <property name="pad">5</property>
+                                                      <property name="pad">0</property>
                                                     </row>
                                                     <row id="8">
+                                                      <property name="pad">0</property>
+                                                    </row>
+                                                    <row id="9">
                                                       <property name="pad">0</property>
                                                     </row>
                                                   </rows>
@@ -3240,7 +3308,7 @@
                                                 <child>
                                                   <object class="ttk.Label" id="LabelExcelOutput">
                                                     <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Output file mask: </property>
+                                                    <property name="text" translatable="yes">Output file: </property>
                                                     <layout>
                                                       <property name="column">0</property>
                                                       <property name="propagate">True</property>
@@ -3315,14 +3383,74 @@
                                                     </layout>
                                                   </object>
                                                 </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="ttk.Frame" id="FrameExcelRangeParameters">
+                                            <property name="height">200</property>
+                                            <property name="style">WhiteFrame.TFrame</property>
+                                            <property name="width">200</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                              <property name="sticky">w</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">0</property>
+                                                </row>
+                                                <row id="3">
+                                                  <property name="pad">0</property>
+                                                </row>
+                                              </rows>
+                                            </layout>
+                                            <child>
+                                              <object class="ttk.Label" id="LabelExcelRangeParametersCaptions">
+                                                <property name="style">WhiteLabelBold.TLabel</property>
+                                                <property name="text" translatable="yes">Range parameters</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                  <property name="sticky">w</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="ttk.Frame" id="FrameExcelRangeParametersBody">
+                                                <property name="height">200</property>
+                                                <property name="style">WhiteFrame.TFrame</property>
+                                                <property name="width">200</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">w</property>
+                                                  <rows>
+                                                    <row id="0">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="1">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="2">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="3">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                  </rows>
+                                                </layout>
                                                 <child>
                                                   <object class="ttk.Label" id="LabelExcelRowStart">
                                                     <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Start row no: </property>
+                                                    <property name="text" translatable="yes">Start row number: </property>
                                                     <layout>
                                                       <property name="column">0</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">2</property>
+                                                      <property name="row">0</property>
                                                       <property name="sticky">w</property>
                                                     </layout>
                                                   </object>
@@ -3337,7 +3465,7 @@
                                                     <layout>
                                                       <property name="column">1</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">2</property>
+                                                      <property name="row">0</property>
                                                       <property name="sticky">ew</property>
                                                     </layout>
                                                   </object>
@@ -3349,18 +3477,18 @@
                                                     <layout>
                                                       <property name="column">2</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">2</property>
+                                                      <property name="row">0</property>
                                                     </layout>
                                                   </object>
                                                 </child>
                                                 <child>
                                                   <object class="ttk.Label" id="LabelExcelRowStop">
                                                     <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Stop row no: </property>
+                                                    <property name="text" translatable="yes">Stop row number: </property>
                                                     <layout>
                                                       <property name="column">0</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">3</property>
+                                                      <property name="row">1</property>
                                                       <property name="sticky">w</property>
                                                     </layout>
                                                   </object>
@@ -3375,13 +3503,87 @@
                                                     <layout>
                                                       <property name="column">1</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">3</property>
+                                                      <property name="row">1</property>
                                                       <property name="sticky">ew</property>
                                                     </layout>
                                                   </object>
                                                 </child>
                                                 <child>
                                                   <object class="ttk.Label" id="LabelExcelRowStopHelp">
+                                                    <property name="style">WhiteLabel.TLabel</property>
+                                                    <property name="text" translatable="yes">(?)</property>
+                                                    <layout>
+                                                      <property name="column">2</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">1</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Label" id="LabelExcelFindHeader">
+                                                    <property name="style">WhiteLabel.TLabel</property>
+                                                    <property name="text" translatable="yes">Find header string: </property>
+                                                    <layout>
+                                                      <property name="column">0</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">2</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Entry" id="EntryExcelFindHeader">
+                                                    <property name="font">TkFixedFont</property>
+                                                    <property name="textvariable">string:excel_find_header</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">2</property>
+                                                      <property name="sticky">ew</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Label" id="LabelExcelFindHeaderHelp">
+                                                    <property name="style">WhiteLabel.TLabel</property>
+                                                    <property name="text" translatable="yes">(?)</property>
+                                                    <layout>
+                                                      <property name="column">2</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">2</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Label" id="LabelExcelFindHeaderLimit">
+                                                    <property name="style">WhiteLabel.TLabel</property>
+                                                    <property name="text" translatable="yes">Find header limit: </property>
+                                                    <layout>
+                                                      <property name="column">0</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">3</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Entry" id="EntryExcelFindHeaderLimit">
+                                                    <property name="font">TkFixedFont</property>
+                                                    <property name="text" translatable="yes">10</property>
+                                                    <property name="textvariable">string:excel_find_header_limit</property>
+                                                    <property name="validate">key</property>
+                                                    <property name="validatecommand">entry_number_validate</property>
+                                                    <property name="validatecommand_args">%P</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">3</property>
+                                                      <property name="sticky">ew</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Label" id="LabelExcelFindHeaderLimitHelp">
                                                     <property name="style">WhiteLabel.TLabel</property>
                                                     <property name="text" translatable="yes">(?)</property>
                                                     <layout>
@@ -3427,13 +3629,84 @@
                                                   </object>
                                                 </child>
                                                 <child>
+                                                  <object class="ttk.Checkbutton" id="CheckbuttonExcelFixDataRange">
+                                                    <property name="style">WhiteCheckbutton.TCheckbutton</property>
+                                                    <property name="text" translatable="yes">Fix Data Range (?)</property>
+                                                    <property name="variable">int:excel_fix_data_range</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="columnspan">2</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">5</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="ttk.Frame" id="FrameExcelConvertParameters">
+                                            <property name="height">200</property>
+                                            <property name="style">WhiteFrame.TFrame</property>
+                                            <property name="width">200</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">4</property>
+                                              <property name="sticky">w</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">0</property>
+                                                </row>
+                                                <row id="3">
+                                                  <property name="pad">0</property>
+                                                </row>
+                                              </rows>
+                                            </layout>
+                                            <child>
+                                              <object class="ttk.Label" id="LabelExcelConvertParametersCaptions">
+                                                <property name="style">WhiteLabelBold.TLabel</property>
+                                                <property name="text" translatable="yes">Convert parameters</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                  <property name="sticky">w</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="ttk.Frame" id="FrameExcelConvertParametersBody">
+                                                <property name="height">200</property>
+                                                <property name="style">WhiteFrame.TFrame</property>
+                                                <property name="width">200</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">5</property>
+                                                  <property name="sticky">w</property>
+                                                  <rows>
+                                                    <row id="0">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="1">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="2">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                  </rows>
+                                                </layout>
+                                                <child>
                                                   <object class="ttk.Label" id="LabelExcelLengthLimit">
                                                     <property name="style">WhiteLabel.TLabel</property>
                                                     <property name="text" translatable="yes">Length limit: </property>
                                                     <layout>
                                                       <property name="column">0</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">5</property>
+                                                      <property name="row">0</property>
                                                       <property name="sticky">w</property>
                                                     </layout>
                                                   </object>
@@ -3448,7 +3721,7 @@
                                                     <layout>
                                                       <property name="column">1</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">5</property>
+                                                      <property name="row">0</property>
                                                       <property name="sticky">ew</property>
                                                     </layout>
                                                   </object>
@@ -3460,7 +3733,7 @@
                                                     <layout>
                                                       <property name="column">2</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">5</property>
+                                                      <property name="row">0</property>
                                                     </layout>
                                                   </object>
                                                 </child>
@@ -3471,7 +3744,7 @@
                                                     <layout>
                                                       <property name="column">0</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">6</property>
+                                                      <property name="row">1</property>
                                                       <property name="sticky">w</property>
                                                     </layout>
                                                   </object>
@@ -3483,7 +3756,7 @@
                                                     <layout>
                                                       <property name="column">1</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">6</property>
+                                                      <property name="row">1</property>
                                                       <property name="sticky">ew</property>
                                                     </layout>
                                                   </object>
@@ -3495,7 +3768,7 @@
                                                     <layout>
                                                       <property name="column">2</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">6</property>
+                                                      <property name="row">1</property>
                                                     </layout>
                                                   </object>
                                                 </child>
@@ -3506,7 +3779,7 @@
                                                     <layout>
                                                       <property name="column">0</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">7</property>
+                                                      <property name="row">2</property>
                                                       <property name="sticky">w</property>
                                                     </layout>
                                                   </object>
@@ -3518,22 +3791,8 @@
                                                     <layout>
                                                       <property name="column">1</property>
                                                       <property name="propagate">True</property>
-                                                      <property name="row">7</property>
+                                                      <property name="row">2</property>
                                                       <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Checkbutton" id="CheckbuttonExcelFixDataRange">
-                                                    <property name="style">WhiteCheckbutton.TCheckbutton</property>
-                                                    <property name="text" translatable="yes">Fix Data Range (?)</property>
-                                                    <property name="variable">int:excel_fix_data_range</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="columnspan">2</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">8</property>
-                                                      <property name="sticky">w</property>
                                                     </layout>
                                                   </object>
                                                 </child>
@@ -3549,479 +3808,11 @@
                                             <layout>
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
-                                              <property name="row">2</property>
+                                              <property name="row">5</property>
                                               <property name="sticky">sew</property>
                                             </layout>
                                             <child>
                                               <object class="tk.Message" id="MessageExcelInfo">
-                                                <property name="background">#ffffff</property>
-                                                <property name="padx">0</property>
-                                                <property name="pady">0</property>
-                                                <property name="text" translatable="yes">INFO: This command does not modify source files, it creates new files.</property>
-                                                <property name="width">400</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">0</property>
-                                                  <property name="sticky">w</property>
-                                                </layout>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="ttk.Notebook.Tab" id="TabWorkingTime">
-                                    <property name="sticky">nsew</property>
-                                    <property name="text" translatable="yes">Working Time</property>
-                                    <child>
-                                      <object class="pygubu.builder.widgets.scrolledframe" id="FrameWorkingTime">
-                                        <property name="padding">5</property>
-                                        <property name="scrolltype">both</property>
-                                        <property name="style">WhiteFrame.TFrame</property>
-                                        <property name="usemousewheel">true</property>
-                                        <layout>
-                                          <property name="column">0</property>
-                                          <property name="propagate">True</property>
-                                          <property name="row">0</property>
-                                          <property name="sticky">nsew</property>
-                                          <rows>
-                                            <row id="1">
-                                              <property name="pad">40</property>
-                                              <property name="weight">0</property>
-                                            </row>
-                                            <row id="2">
-                                              <property name="weight">1</property>
-                                            </row>
-                                          </rows>
-                                        </layout>
-                                        <child>
-                                          <object class="ttk.Frame" id="FrameWorkingTimeFiles">
-                                            <property name="height">200</property>
-                                            <property name="style">WhiteFrame.TFrame</property>
-                                            <property name="width">200</property>
-                                            <layout>
-                                              <property name="column">0</property>
-                                              <property name="propagate">True</property>
-                                              <property name="row">0</property>
-                                              <property name="sticky">ew</property>
-                                              <rows>
-                                                <row id="0">
-                                                  <property name="weight">0</property>
-                                                </row>
-                                              </rows>
-                                              <columns>
-                                                <column id="0">
-                                                  <property name="weight">0</property>
-                                                </column>
-                                              </columns>
-                                            </layout>
-                                            <child>
-                                              <object class="ttk.Label" id="LabelWorkingTimeFilesCaption">
-                                                <property name="style">WhiteLabelBold.TLabel</property>
-                                                <property name="text" translatable="yes">Text Files</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">0</property>
-                                                  <property name="sticky">w</property>
-                                                </layout>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="ttk.Label" id="LabelWorkingTimeFilesHelp1">
-                                                <property name="style">WhiteLabel.TLabel</property>
-                                                <property name="text" translatable="yes">File format: date_from&lt;TAB&gt;date_to&lt;EOL&gt;</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">1</property>
-                                                  <property name="sticky">w</property>
-                                                </layout>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="ttk.Label" id="LabelWorkingTimeFilesHelp2">
-                                                <property name="style">WhiteLabel.TLabel</property>
-                                                <property name="text" translatable="yes">Supported 4 date formats (?)</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">2</property>
-                                                  <property name="sticky">w</property>
-                                                </layout>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="ttk.Frame" id="FrameWorkingTimeFilesBody">
-                                                <property name="height">200</property>
-                                                <property name="style">WhiteFrame.TFrame</property>
-                                                <property name="width">200</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">3</property>
-                                                  <property name="sticky">w</property>
-                                                  <columns>
-                                                    <column id="0">
-                                                      <property name="pad">5</property>
-                                                    </column>
-                                                    <column id="1">
-                                                      <property name="pad">10</property>
-                                                    </column>
-                                                  </columns>
-                                                </layout>
-                                                <child>
-                                                  <object class="ttk.Button" id="ButtonWorkingTimeFilesAdd">
-                                                    <property name="command">on_button_add_files</property>
-                                                    <property name="text" translatable="yes">Add...</property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">0</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Button" id="ButtonWorkingTimeFilesClear">
-                                                    <property name="command">on_button_clear_files</property>
-                                                    <property name="text" translatable="yes">Clear</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">0</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeFilesInfo">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">No files selected</property>
-                                                    <property name="textvariable">string:files_info</property>
-                                                    <layout>
-                                                      <property name="column">2</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">0</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="ttk.Frame" id="FrameWorkingTimeParameters">
-                                            <property name="height">200</property>
-                                            <property name="style">WhiteFrame.TFrame</property>
-                                            <property name="width">200</property>
-                                            <layout>
-                                              <property name="column">0</property>
-                                              <property name="propagate">True</property>
-                                              <property name="row">1</property>
-                                              <property name="sticky">ew</property>
-                                              <columns>
-                                                <column id="0">
-                                                  <property name="weight">1</property>
-                                                </column>
-                                              </columns>
-                                            </layout>
-                                            <child>
-                                              <object class="ttk.Label" id="LabelWorkingTimeParametersCaptions">
-                                                <property name="style">WhiteLabelBold.TLabel</property>
-                                                <property name="text" translatable="yes">Parameters</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">0</property>
-                                                  <property name="sticky">w</property>
-                                                </layout>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="ttk.Frame" id="FrameWorkingTimeParametersBody">
-                                                <property name="height">200</property>
-                                                <property name="style">WhiteFrame.TFrame</property>
-                                                <property name="width">200</property>
-                                                <layout>
-                                                  <property name="column">0</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">1</property>
-                                                  <property name="sticky">ew</property>
-                                                  <rows>
-                                                    <row id="0">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="1">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="2">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="3">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="4">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="5">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="6">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                    <row id="7">
-                                                      <property name="pad">5</property>
-                                                    </row>
-                                                  </rows>
-                                                  <columns>
-                                                    <column id="1">
-                                                      <property name="weight">1</property>
-                                                    </column>
-                                                  </columns>
-                                                </layout>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeMonday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Monday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">0</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeMonday">
-                                                    <property name="text" translatable="yes">09:00-12:00,13:00-18:00</property>
-                                                    <property name="textvariable">string:wt_1</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">0</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeTuesday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Tuesday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">1</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeTuesday">
-                                                    <property name="text" translatable="yes">09:00-12:00,13:00-18:00</property>
-                                                    <property name="textvariable">string:wt_2</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">1</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeWednesday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Wednesday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">2</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeWednesday">
-                                                    <property name="text" translatable="yes">09:00-12:00,13:00-18:00</property>
-                                                    <property name="textvariable">string:wt_3</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">2</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeThursday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Thursday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">3</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeThursday">
-                                                    <property name="text" translatable="yes">09:00-12:00,13:00-18:00</property>
-                                                    <property name="textvariable">string:wt_4</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">3</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeFriday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Friday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">4</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeFriday">
-                                                    <property name="text" translatable="yes">09:00-12:00,13:00-18:00</property>
-                                                    <property name="textvariable">string:wt_5</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">4</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeSaturday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Saturday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">5</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeSaturday">
-                                                    <property name="textvariable">string:wt_6</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">5</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeSunday">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Sunday: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">6</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Entry" id="EntryWorkingTimeSunday">
-                                                    <property name="textvariable">string:wt_7</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">6</property>
-                                                      <property name="sticky">ew</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Label" id="LabelWorkingTimeHalfHolidays">
-                                                    <property name="style">WhiteLabel.TLabel</property>
-                                                    <property name="text" translatable="yes">Setup: </property>
-                                                    <layout>
-                                                      <property name="column">0</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">7</property>
-                                                      <property name="sticky">w</property>
-                                                    </layout>
-                                                  </object>
-                                                </child>
-                                                <child>
-                                                  <object class="ttk.Frame" id="FrameWorkingTimeHalfHolidaysButtons">
-                                                    <property name="height">200</property>
-                                                    <property name="style">WhiteFrame.TFrame</property>
-                                                    <property name="width">200</property>
-                                                    <layout>
-                                                      <property name="column">1</property>
-                                                      <property name="propagate">True</property>
-                                                      <property name="row">7</property>
-                                                      <property name="sticky">ew</property>
-                                                      <columns>
-                                                        <column id="1">
-                                                          <property name="minsize">5</property>
-                                                        </column>
-                                                      </columns>
-                                                    </layout>
-                                                    <child>
-                                                      <object class="ttk.Button" id="ButtonWorkingTimeHolidays">
-                                                        <property name="command">on_button_working_time_holidays</property>
-                                                        <property name="text" translatable="yes">Holidays</property>
-                                                        <layout>
-                                                          <property name="column">0</property>
-                                                          <property name="propagate">True</property>
-                                                          <property name="row">0</property>
-                                                          <property name="sticky">w</property>
-                                                        </layout>
-                                                      </object>
-                                                    </child>
-                                                    <child>
-                                                      <object class="ttk.Button" id="ButtonWorkingTimeHalfHolidays">
-                                                        <property name="command">on_button_working_time_half_holidays</property>
-                                                        <property name="text" translatable="yes">Half-holidays</property>
-                                                        <layout>
-                                                          <property name="column">2</property>
-                                                          <property name="propagate">True</property>
-                                                          <property name="row">0</property>
-                                                          <property name="sticky">w</property>
-                                                        </layout>
-                                                      </object>
-                                                    </child>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="ttk.Frame" id="FrameWorkingTimeInfo">
-                                            <property name="height">200</property>
-                                            <property name="style">WhiteFrame.TFrame</property>
-                                            <property name="width">200</property>
-                                            <layout>
-                                              <property name="column">0</property>
-                                              <property name="propagate">True</property>
-                                              <property name="row">2</property>
-                                              <property name="sticky">sew</property>
-                                            </layout>
-                                            <child>
-                                              <object class="tk.Message" id="MessageWorkingTimeInfo">
                                                 <property name="background">#ffffff</property>
                                                 <property name="padx">0</property>
                                                 <property name="pady">0</property>
@@ -4108,13 +3899,18 @@
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
+                                            <row id="0">
+                                              <property name="pad">20</property>
+                                              <property name="weight">0</property>
+                                            </row>
                                             <row id="1">
-                                              <property name="minsize">20</property>
+                                              <property name="minsize">10</property>
                                               <property name="pad">0</property>
                                               <property name="weight">0</property>
                                             </row>
                                             <row id="2">
-                                              <property name="weight">0</property>
+                                              <property name="pad">20</property>
+                                              <property name="weight">1</property>
                                             </row>
                                           </rows>
                                           <columns>
@@ -4249,14 +4045,14 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">2</property>
-                                              <property name="sticky">ew</property>
+                                              <property name="sticky">nsew</property>
                                               <rows>
                                                 <row id="1">
                                                   <property name="minsize">3</property>
                                                   <property name="weight">0</property>
                                                 </row>
                                                 <row id="2">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </row>
                                               </rows>
                                               <columns>
@@ -4286,17 +4082,20 @@
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
                                                   <property name="row">2</property>
-                                                  <property name="sticky">ew</property>
+                                                  <property name="sticky">nsew</property>
                                                   <rows>
                                                     <row id="1">
                                                       <property name="minsize">5</property>
                                                       <property name="pad">0</property>
                                                     </row>
                                                     <row id="2">
-                                                      <property name="weight">0</property>
+                                                      <property name="weight">1</property>
                                                     </row>
                                                     <row id="3">
                                                       <property name="minsize">5</property>
+                                                    </row>
+                                                    <row id="4">
+                                                      <property name="weight">0</property>
                                                     </row>
                                                   </rows>
                                                   <columns>

@@ -20,9 +20,17 @@ class StopConverting(Exception):
 
 class ExcelConverter():
 
-    def __init__(self, callback, sheet_mask, file_mask,
-                 row_start=0, row_stop=0, last_column=None,
-                 max_len_default=None, max_len_custom=None,
+    def __init__(self,
+                 callback,
+                 sheet_mask,
+                 file_mask,
+                 row_start=0,
+                 row_stop=0,
+                 header_str=None,
+                 find_header_limit=10,
+                 last_column=None,
+                 max_len_default=None,
+                 max_len_custom=None,
                  last_cell_limit=None):
         super().__init__()
 
@@ -32,6 +40,9 @@ class ExcelConverter():
 
         self._row_start = row_start or 0
         self._row_stop = row_stop or 0
+
+        self._header_str = header_str
+        self._find_header_limit = find_header_limit or 10
 
         if isinstance(last_column, str):
             self._column_count = colno(last_column) + 1
@@ -77,6 +88,12 @@ class ExcelConverter():
                 self._write_sheet(fpo, rows, extra)
 
     def _write_sheet(self, fpo, rows, extra=()):
+        header_found = False
+        header_buf = []
+
+        if not self._header_str:
+            header_found = True
+
         for i, row in enumerate(rows, 1):
             if i < self._row_start:
                 continue
@@ -101,11 +118,31 @@ class ExcelConverter():
                 row = [field[:self._max_len_custom.get(i, self._max_len_default)]
                        for i, field in enumerate(row, -len(extra)-1)]
 
-            fpo.write("\t".join(row))
-            fpo.write("\n")
+            row_str = "\t".join(row) + "\n"
+
+            if not header_found:
+                if self._header_str in row_str:
+                    header_found = True
+
+                elif self._find_header_limit == i:
+                    for row_str in header_buf:
+                        fpo.write(row_str)
+
+                    header_buf.clear()
+
+                    header_found = True
+
+            if header_found:
+                fpo.write(row_str)
+            else:
+                header_buf.append(row_str)
 
             if self._row_stop == i:
                 break
+
+        if not header_found:
+            for row_str in header_buf:
+                fpo.write(row_str)
 
     @staticmethod
     def _make_regex(sheet_names):

@@ -60,10 +60,9 @@ class GenerateScriptCommand(Command):
                 return 255
             return 50
 
-        progress = None
-
         for file in process_files(args):
             file_size = os.path.getsize(file)
+            progress = None
 
             with open(file, "rb") as fpi:
                 fpi_tell = fpi.tell
