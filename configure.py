@@ -24,9 +24,6 @@ def main(argv=sys.argv):
 
     # Check dependencies
 
-    if sys.version_info[:2] != (3, 6):
-        print("Warning: python 3.6 is required to build exe!")
-
     buildenv = platform.uname()
 
     if buildenv.system != "Windows" \

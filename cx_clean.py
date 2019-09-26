@@ -22,7 +22,7 @@ def main(argv=sys.argv):
         else:
             file.rename(target_dll)
 
-    Path("build_exe/lib/python36.dll").rename("build_exe/python36.dll")
+    Path("build_exe/lib/python37.dll").rename("build_exe/python37.dll")
 
     for mask in ("*.c", "*.pyx", "*.pxx"):
         for file in Path("build_exe/lib/dufi/commands").glob(mask):

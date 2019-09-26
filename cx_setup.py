@@ -5,10 +5,6 @@ import os
 from cx_Freeze import setup, Executable
 
 
-if sys.version_info[:2] != (3, 6):
-    raise Exception("Python 3.6 required!")
-
-
 # https://cx-freeze.readthedocs.io/en/latest/distutils.html
 build_exe_options = {
     "build_exe": os.path.abspath("build_exe"),

@@ -6,7 +6,7 @@ Dump Fixer Tools are a set of useful utilities that helps you to deal with rukoz
 Build Dependencies
 ==================
 1. Windows 10 x64
-1. Python 3.6
+1. Python >=3.6
 1. Microsoft Visual Studio 2017 Community with "Desktop development with C++" components
 1. Python modules from requirements.txt and requirements_dev.txt
 
@@ -14,11 +14,13 @@ How to build
 ============
 
 Method 1 (simple):
+1. Apply pygubu patch (optional)
 1. Run command prompt in admin mode
 1. Activate conda environment
 1. build_all.bat
 
 Method 2:
+1. Apply pygubu patch (optional)
 1. Run command prompt in user mode
 1. Activate conda environment
 1. clean.py
