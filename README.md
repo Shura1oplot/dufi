@@ -14,13 +14,11 @@ How to build
 ============
 
 Method 1 (simple):
-1. Apply pygubu patch (optional)
 1. Run command prompt in admin mode
 1. Activate conda environment
 1. build_all.bat
 
 Method 2:
-1. Apply pygubu patch (optional)
 1. Run command prompt in user mode
 1. Activate conda environment
 1. clean.py

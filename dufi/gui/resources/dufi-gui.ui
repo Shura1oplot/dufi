@@ -3859,7 +3859,7 @@
                                         <child>
                                           <object class="pygubu.builder.widgets.scrollbarhelper" id="scrollbarhelperTextXML2TSV">
                                             <property name="scrolltype">both</property>
-                                            <property name="usemousewheel">false</property>
+                                            <property name="usemousewheel">true</property>
                                             <layout>
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
