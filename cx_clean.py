@@ -29,7 +29,7 @@ def main(argv=sys.argv):
             file.unlink()
 
     shutil.rmtree("build_exe/lib/distutils/command")
-    shutil.rmtree("build_exe/tk/demos")
+    shutil.rmtree("build_exe/lib/tkinter/tk/demos")
 
     print("cx_clean.py: done!")
 

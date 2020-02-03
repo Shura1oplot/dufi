@@ -5,11 +5,15 @@ import os
 from cx_Freeze import setup, Executable
 
 
+if sys.version_info[:2] != (3, 7):
+    raise Exception("Python 3.7 required!")
+
+
 # https://cx-freeze.readthedocs.io/en/latest/distutils.html
 build_exe_options = {
     "build_exe": os.path.abspath("build_exe"),
     "packages": ["decimal", "gzip", "idna", "lxml"],  # lxml._elementpath?
-    "excludes": ["numpy", "pandas", "multiprocessing", "_ssl"],
+    "excludes": ["Tkinter", "numpy", "pandas", "multiprocessing", "_ssl"],
     "include_msvcr": True,
 }
 

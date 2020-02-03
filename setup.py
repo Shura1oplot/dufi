@@ -73,5 +73,5 @@ setup(
     url="https://github.com/Shura1oplot/dufi",
     version="0.9.10",
     zip_safe=False,
-    ext_modules=cythonize(_preprocess_pyx("dufi/commands/*.pxx")),
+    ext_modules=cythonize(_preprocess_pyx("dufi/commands/*.pxx"), language_level="3"),
 )

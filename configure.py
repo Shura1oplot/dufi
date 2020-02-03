@@ -12,7 +12,7 @@ DUFI_VERSION = "0.9.10"
 TCL_VERSION = "8.6"
 
 SDK_BASE_DIR = "%ProgramFiles(x86)%\\Windows Kits\\10\\Include"
-VC_DIR = "%ProgramFiles(x86)%\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build"
+VC_DIR = "%ProgramFiles(x86)%\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build"
 
 
 def main(argv=sys.argv):
@@ -23,6 +23,9 @@ def main(argv=sys.argv):
             raise ValueError("Should be run with admin rights!")
 
     # Check dependencies
+
+    if sys.version_info[:2] != (3, 7):
+        print("Warning: python 3.7 is required to build exe!")
 
     buildenv = platform.uname()
 

@@ -6,8 +6,8 @@ Dump Fixer Tools are a set of useful utilities that helps you to deal with rukoz
 Build Dependencies
 ==================
 1. Windows 10 x64
-1. Python >=3.6
-1. Microsoft Visual Studio 2017 Community with "Desktop development with C++" components
+1. Python 3.7
+1. Microsoft Visual Studio 2019 Community with "Desktop development with C++" components
 1. Python modules from requirements.txt and requirements_dev.txt
 
 How to build
