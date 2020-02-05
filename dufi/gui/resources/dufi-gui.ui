@@ -233,7 +233,7 @@
                                         <property name="usemousewheel">true</property>
                                         <layout>
                                           <property name="column">0</property>
-                                          <property name="propagate">True</property>
+                                          <property name="propagate">False</property>
                                           <property name="row">0</property>
                                           <property name="sticky">nsew</property>
                                           <rows>
@@ -251,6 +251,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameDiagnosticsFiles">
@@ -266,10 +271,13 @@
                                                 <row id="0">
                                                   <property name="weight">0</property>
                                                 </row>
+                                                <row id="1">
+                                                  <property name="weight">0</property>
+                                                </row>
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                                 <column id="2">
                                                   <property name="weight">0</property>
@@ -289,13 +297,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorDiagnosticsFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelDiagnosticsFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv or *.lst files (*.fil files not supported).</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -307,7 +326,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -320,7 +339,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -381,7 +400,20 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">3</property>
+                                                </row>
+                                                <row id="3">
+                                                  <property name="weight">1</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelDiagnosticsCSVParametersCaption">
@@ -396,6 +428,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorDiagnosticsCSVParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameDiagnosticsSeparator">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -403,7 +446,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -450,8 +493,8 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
-                                                  <property name="sticky">w</property>
+                                                  <property name="row">3</property>
+                                                  <property name="sticky">ew</property>
                                                 </layout>
                                               </object>
                                             </child>
@@ -467,6 +510,11 @@
                                               <property name="propagate">True</property>
                                               <property name="row">2</property>
                                               <property name="sticky">ew</property>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelDiagnosticsOptionsCaption">
@@ -481,6 +529,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorDiagnosticsOptionsCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameDiagnosticsCompatTests">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -488,7 +547,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                                 <child>
@@ -526,7 +585,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                                 <child>
@@ -630,6 +689,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameRepairFiles">
@@ -648,7 +712,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -665,13 +729,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorRepairFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelRepairFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv or *.lst files (*.fil files not supported).</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -683,7 +758,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -696,7 +771,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -757,15 +832,20 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
                                               <rows>
                                                 <row id="0">
                                                   <property name="pad">0</property>
                                                 </row>
                                                 <row id="1">
-                                                  <property name="pad">0</property>
+                                                  <property name="pad">3</property>
                                                 </row>
                                               </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelRepairCSVParametersCaption">
@@ -780,6 +860,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorRepairCSVParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameRepairSeparator">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -787,7 +878,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -835,7 +926,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -849,7 +940,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -866,6 +957,11 @@
                                               <property name="propagate">True</property>
                                               <property name="row">2</property>
                                               <property name="sticky">ew</property>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelRepairOptionsCaption">
@@ -880,6 +976,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorRepairOptionsCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Checkbutton" id="CheckbuttonRemoveEmdebbedNewlines">
                                                 <property name="style">WhiteCheckbutton.TCheckbutton</property>
                                                 <property name="text" translatable="yes">Remove embedded newlines</property>
@@ -887,7 +994,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -904,6 +1011,16 @@
                                               <property name="propagate">True</property>
                                               <property name="row">3</property>
                                               <property name="sticky">sew</property>
+                                              <rows>
+                                                <row id="0">
+                                                  <property name="weight">1</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="tk.Message" id="MessageRepairInfo">
@@ -916,7 +1033,7 @@
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
                                                   <property name="row">0</property>
-                                                  <property name="sticky">w</property>
+                                                  <property name="sticky">sw</property>
                                                 </layout>
                                               </object>
                                             </child>
@@ -956,6 +1073,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameMergeColumnFiles">
@@ -974,7 +1096,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -991,13 +1113,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorMergeColumnFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelMergeColumnFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv or *.lst files (*.fil files not supported).</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1009,7 +1142,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1022,7 +1155,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -1083,7 +1216,17 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">3</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelMergeColumnCSVParametersCaption">
@@ -1098,6 +1241,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorMergeColumnCSVParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameMergeColumnSeparator">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -1105,7 +1259,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -1153,7 +1307,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1169,18 +1323,21 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">2</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
                                               <rows>
                                                 <row id="1">
-                                                  <property name="pad">5</property>
+                                                  <property name="pad">1</property>
                                                 </row>
                                                 <row id="2">
-                                                  <property name="pad">5</property>
+                                                  <property name="pad">0</property>
                                                 </row>
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
+                                                </column>
+                                                <column id="1">
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -1198,55 +1355,85 @@
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="ttk.Label" id="LabelMergeColumnColumnNumber">
-                                                <property name="style">WhiteLabel.TLabel</property>
-                                                <property name="text" translatable="yes">Number of column: </property>
+                                              <object class="ttk.Separator" id="SeparatorMergeColumnParametersCaption">
+                                                <property name="orient">horizontal</property>
                                                 <layout>
                                                   <property name="column">0</property>
+                                                  <property name="columnspan">2</property>
                                                   <property name="propagate">True</property>
                                                   <property name="row">1</property>
-                                                  <property name="sticky">w</property>
+                                                  <property name="sticky">new</property>
                                                 </layout>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="ttk.Entry" id="EntryMergeColumnColumnNumber">
-                                                <property name="font">TkFixedFont</property>
-                                                <property name="textvariable">string:merge_column_number</property>
-                                                <property name="validate">key</property>
-                                                <property name="validatecommand">entry_number_validate</property>
-                                                <property name="validatecommand_args">%P</property>
-                                                <layout>
-                                                  <property name="column">1</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">1</property>
-                                                  <property name="sticky">ew</property>
-                                                </layout>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="ttk.Label" id="LabelMergeColumnReplacement">
-                                                <property name="style">WhiteLabel.TLabel</property>
-                                                <property name="text" translatable="yes">Replacement character: </property>
+                                              <object class="ttk.Frame" id="FrameMergeColumnColumnNumberAndReplacement">
+                                                <property name="height">200</property>
+                                                <property name="style">WhiteFrame.TFrame</property>
+                                                <property name="width">200</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
                                                   <property name="row">2</property>
-                                                  <property name="sticky">w</property>
+                                                  <property name="sticky">nw</property>
+                                                  <rows>
+                                                    <row id="0">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                  </rows>
                                                 </layout>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="ttk.Entry" id="EntryMergeColumnReplacement">
-                                                <property name="font">TkFixedFont</property>
-                                                <property name="text" translatable="yes">#</property>
-                                                <property name="textvariable">string:merge_replacement</property>
-                                                <layout>
-                                                  <property name="column">1</property>
-                                                  <property name="propagate">True</property>
-                                                  <property name="row">2</property>
-                                                  <property name="sticky">ew</property>
-                                                </layout>
+                                                <child>
+                                                  <object class="ttk.Label" id="LabelMergeColumnColumnNumber">
+                                                    <property name="style">WhiteLabel.TLabel</property>
+                                                    <property name="text" translatable="yes">Number of column: </property>
+                                                    <layout>
+                                                      <property name="column">0</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">0</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Entry" id="EntryMergeColumnColumnNumber">
+                                                    <property name="font">TkFixedFont</property>
+                                                    <property name="textvariable">string:merge_column_number</property>
+                                                    <property name="validate">key</property>
+                                                    <property name="validatecommand">entry_number_validate</property>
+                                                    <property name="validatecommand_args">%P</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">0</property>
+                                                      <property name="sticky">ew</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Label" id="LabelMergeColumnReplacement">
+                                                    <property name="style">WhiteLabel.TLabel</property>
+                                                    <property name="text" translatable="yes">Replacement character: </property>
+                                                    <layout>
+                                                      <property name="column">0</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">1</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Entry" id="EntryMergeColumnReplacement">
+                                                    <property name="font">TkFixedFont</property>
+                                                    <property name="text" translatable="yes">#</property>
+                                                    <property name="textvariable">string:merge_replacement</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">1</property>
+                                                      <property name="sticky">ew</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
                                               </object>
                                             </child>
                                           </object>
@@ -1307,6 +1494,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameOracleFiles">
@@ -1325,7 +1517,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -1342,13 +1534,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorOracleFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelOracleFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv or *.lst files (*.fil files not supported).</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1360,7 +1563,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1373,7 +1576,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -1491,6 +1694,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameConvertFiles">
@@ -1509,7 +1717,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -1526,13 +1734,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorConvertFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelConvertFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv, *.lst or *.fil files.</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1544,7 +1763,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -1557,7 +1776,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -1618,7 +1837,17 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">2</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelConvertParametersCaptions">
@@ -1633,6 +1862,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorConvertParametersCaptions">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameConvertParametersBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -1640,7 +1880,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <rows>
                                                     <row id="0">
@@ -1744,7 +1984,17 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">2</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">2</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelConvertEncodingCaptions">
@@ -1759,6 +2009,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorConvertEncodingCaptions">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameConvertEncodingBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -1766,7 +2027,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <rows>
                                                     <row id="0">
@@ -1843,7 +2104,12 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">3</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelConvertFormatCaption">
@@ -1858,6 +2124,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorConvertFormatCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameConvertFormatBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -1865,7 +2142,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                                 <child>
@@ -2056,6 +2333,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameCRToSpaceFiles">
@@ -2074,7 +2356,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -2091,13 +2373,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorCRToSpaceFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelCRToSpaceFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv, *.lst or *.fil files.</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2109,7 +2402,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2122,7 +2415,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -2230,6 +2523,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameCountLinesFiles">
@@ -2248,7 +2546,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -2265,13 +2563,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorCountLinesFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelCountLinesFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv, *.lst or *.fil files.</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2283,7 +2592,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2296,7 +2605,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -2407,6 +2716,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameJoinRowsFiles">
@@ -2425,7 +2739,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -2442,13 +2756,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorJoinRowsFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelJoinRowsFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv, *.lst or *.fil files.</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2460,7 +2785,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2473,7 +2798,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -2535,6 +2860,16 @@
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
                                               <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">3</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelJoinRowsParametersCaption">
@@ -2544,7 +2879,18 @@
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
                                                   <property name="row">0</property>
-                                                  <property name="sticky">w</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="ttk.Separator" id="SeparatorJoinRowsParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
                                                 </layout>
                                               </object>
                                             </child>
@@ -2556,7 +2902,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                                 <child>
@@ -2594,7 +2940,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2607,7 +2953,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2676,6 +3022,11 @@
                                               <property name="weight">1</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameScriptFiles">
@@ -2694,7 +3045,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -2711,13 +3062,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorScriptFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelScriptFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.txt, *.csv or *.lst files (*.fil files not supported).</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2729,7 +3091,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2742,7 +3104,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -2803,7 +3165,17 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">3</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelScriptCSVParametersCaption">
@@ -2819,6 +3191,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorScriptCSVParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameScriptSeparator">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -2826,7 +3209,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -2875,7 +3258,7 @@
                                                   <property name="column">0</property>
                                                   <property name="columnspan">2</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2892,6 +3275,16 @@
                                               <property name="propagate">True</property>
                                               <property name="row">2</property>
                                               <property name="sticky">ew</property>
+                                              <rows>
+                                                <row id="1">
+                                                  <property name="pad">1</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelScriptParametersCaption">
@@ -2906,6 +3299,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorScriptParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameScriptParametersGroup">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -2913,7 +3317,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <rows>
                                                     <row id="0">
@@ -2983,7 +3387,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">4</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -2996,7 +3400,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">5</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -3067,13 +3471,18 @@
                                             </row>
                                             <row id="4">
                                               <property name="pad">20</property>
-                                              <property name="weight">0</property>
+                                              <property name="weight">1</property>
                                             </row>
                                             <row id="5">
                                               <property name="pad">20</property>
-                                              <property name="weight">1</property>
+                                              <property name="weight">0</property>
                                             </row>
                                           </rows>
+                                          <columns>
+                                            <column id="0">
+                                              <property name="weight">1</property>
+                                            </column>
+                                          </columns>
                                         </layout>
                                         <child>
                                           <object class="ttk.Frame" id="FrameExcelFiles">
@@ -3092,7 +3501,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -3109,13 +3518,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorExcelFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelExcelFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select *.xlsx, *.xlsm or *.xls files.</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -3127,7 +3547,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -3140,7 +3560,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -3201,15 +3621,20 @@
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
                                               <property name="row">1</property>
-                                              <property name="sticky">w</property>
+                                              <property name="sticky">ew</property>
                                               <rows>
                                                 <row id="1">
-                                                  <property name="pad">0</property>
+                                                  <property name="pad">3</property>
                                                 </row>
                                                 <row id="3">
                                                   <property name="pad">0</property>
                                                 </row>
                                               </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelExcelOutputParametersCaptions">
@@ -3224,6 +3649,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorExcelOutputParametersCaptions">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameExcelOutputParametersBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -3231,7 +3667,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <rows>
                                                     <row id="0">
@@ -3395,16 +3831,24 @@
                                             <layout>
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
-                                              <property name="row">3</property>
-                                              <property name="sticky">w</property>
+                                              <property name="row">2</property>
+                                              <property name="sticky">ew</property>
                                               <rows>
                                                 <row id="1">
-                                                  <property name="pad">0</property>
+                                                  <property name="pad">3</property>
+                                                </row>
+                                                <row id="2">
+                                                  <property name="weight">0</property>
                                                 </row>
                                                 <row id="3">
                                                   <property name="pad">0</property>
                                                 </row>
                                               </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelExcelRangeParametersCaptions">
@@ -3419,6 +3863,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorExcelRangeParametersCaptions">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameExcelRangeParametersBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -3426,8 +3881,8 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
-                                                  <property name="sticky">w</property>
+                                                  <property name="row">2</property>
+                                                  <property name="sticky">new</property>
                                                   <rows>
                                                     <row id="0">
                                                       <property name="pad">5</property>
@@ -3440,6 +3895,12 @@
                                                     </row>
                                                     <row id="3">
                                                       <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="4">
+                                                      <property name="pad">5</property>
+                                                    </row>
+                                                    <row id="5">
+                                                      <property name="pad">0</property>
                                                     </row>
                                                   </rows>
                                                 </layout>
@@ -3654,16 +4115,21 @@
                                             <layout>
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
-                                              <property name="row">4</property>
-                                              <property name="sticky">w</property>
+                                              <property name="row">3</property>
+                                              <property name="sticky">ew</property>
                                               <rows>
                                                 <row id="1">
-                                                  <property name="pad">0</property>
+                                                  <property name="pad">3</property>
                                                 </row>
                                                 <row id="3">
                                                   <property name="pad">0</property>
                                                 </row>
                                               </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="ttk.Label" id="LabelExcelConvertParametersCaptions">
@@ -3672,8 +4138,19 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">4</property>
+                                                  <property name="row">0</property>
                                                   <property name="sticky">w</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="ttk.Separator" id="SeparatorExcelConvertParametersCaptions">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
                                                 </layout>
                                               </object>
                                             </child>
@@ -3685,7 +4162,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">5</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                   <rows>
                                                     <row id="0">
@@ -3808,8 +4285,18 @@
                                             <layout>
                                               <property name="column">0</property>
                                               <property name="propagate">True</property>
-                                              <property name="row">5</property>
+                                              <property name="row">4</property>
                                               <property name="sticky">sew</property>
+                                              <rows>
+                                                <row id="0">
+                                                  <property name="weight">1</property>
+                                                </row>
+                                              </rows>
+                                              <columns>
+                                                <column id="0">
+                                                  <property name="weight">1</property>
+                                                </column>
+                                              </columns>
                                             </layout>
                                             <child>
                                               <object class="tk.Message" id="MessageExcelInfo">
@@ -3835,7 +4322,7 @@
                                 <child>
                                   <object class="ttk.Notebook.Tab" id="TabXMLToTSV">
                                     <property name="sticky">nsew</property>
-                                    <property name="text" translatable="yes">Tab_1</property>
+                                    <property name="text" translatable="yes">XMLToTSV</property>
                                     <child>
                                       <object class="ttk.Frame" id="FrameXMLToTSV">
                                         <property name="padding">5</property>
@@ -3936,7 +4423,7 @@
                                               </rows>
                                               <columns>
                                                 <column id="0">
-                                                  <property name="weight">0</property>
+                                                  <property name="weight">1</property>
                                                 </column>
                                               </columns>
                                             </layout>
@@ -3953,13 +4440,24 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorOtherFilesCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Label" id="LabelOtherFilesHelp1">
                                                 <property name="style">WhiteLabel.TLabel</property>
                                                 <property name="text" translatable="yes">Select files. File type depends on the command you want to run.</property>
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">1</property>
+                                                  <property name="row">2</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -3971,7 +4469,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">w</property>
                                                 </layout>
                                               </object>
@@ -3984,7 +4482,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">3</property>
+                                                  <property name="row">4</property>
                                                   <property name="sticky">w</property>
                                                   <columns>
                                                     <column id="0">
@@ -4048,10 +4546,16 @@
                                               <property name="sticky">nsew</property>
                                               <rows>
                                                 <row id="1">
-                                                  <property name="minsize">3</property>
+                                                  <property name="minsize">0</property>
+                                                  <property name="pad">0</property>
                                                   <property name="weight">0</property>
                                                 </row>
                                                 <row id="2">
+                                                  <property name="minsize">3</property>
+                                                  <property name="pad">3</property>
+                                                  <property name="weight">0</property>
+                                                </row>
+                                                <row id="3">
                                                   <property name="weight">1</property>
                                                 </row>
                                               </rows>
@@ -4074,6 +4578,17 @@
                                               </object>
                                             </child>
                                             <child>
+                                              <object class="ttk.Separator" id="SeparatorOtherParametersCaption">
+                                                <property name="orient">horizontal</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
                                               <object class="ttk.Frame" id="FrameOtherParametersBody">
                                                 <property name="height">200</property>
                                                 <property name="style">WhiteFrame.TFrame</property>
@@ -4081,7 +4596,7 @@
                                                 <layout>
                                                   <property name="column">0</property>
                                                   <property name="propagate">True</property>
-                                                  <property name="row">2</property>
+                                                  <property name="row">3</property>
                                                   <property name="sticky">nsew</property>
                                                   <rows>
                                                     <row id="1">
@@ -4089,6 +4604,7 @@
                                                       <property name="pad">0</property>
                                                     </row>
                                                     <row id="2">
+                                                      <property name="minsize">0</property>
                                                       <property name="weight">1</property>
                                                     </row>
                                                     <row id="3">
@@ -4152,6 +4668,7 @@
                                                 </child>
                                                 <child>
                                                   <object class="pygubu.builder.widgets.editabletreeview" id="editabletreeviewOtherParameters">
+                                                    <property name="height">1</property>
                                                     <property name="selectmode">browse</property>
                                                     <property name="show">headings</property>
                                                     <bind add="" handler="on_other_command_param_value_edit" sequence="&lt;&lt;TreeviewInplaceEdit&gt;&gt;" />

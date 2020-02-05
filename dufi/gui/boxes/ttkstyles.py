@@ -47,7 +47,8 @@ def create_ttk_style_plain_notebook():
 
 @_ttk_style_customizer
 def create_ttk_style_bold_label():
-    bold_font = tk_font.nametofont("TkDefaultFont").copy()
-    bold_font.config(weight="bold")
+    # bold_font = tk_font.nametofont("TkDefaultFont").copy()
+    # bold_font.config(weight=tk_font.BOLD)
+    bold_font = ("Segoe UI", 9, "bold")
     ttk.Style().configure("Bold.TLabel", font=bold_font)
     ttk.Style().configure("WhiteLabelBold.TLabel", font=bold_font, background="White")
