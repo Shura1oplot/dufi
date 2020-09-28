@@ -12,13 +12,13 @@ from ..utils import echo
 
 class GenerateScriptCommand(Command):
 
-    cli_command = "create-upload-script"
-    cli_command_aliases = ("crupsc", )
-    cli_command_help = "generate SQL script and bcp batch for data uploading"
+    cli_command = "create-script"
+    cli_command_aliases = ("create-upload-script", "crupsc", )
+    cli_command_help = "create SQL script and bcp batch for data uploading"
 
     gui_order = 9
-    gui_command = "Make Upload Stripts"
-    gui_description = "Generate 'CREATE TABLE' SQL script and data uploading BAT script."
+    gui_command = "Create Stript"
+    gui_description = "Create 'CREATE TABLE' SQL script and data uploading BAT script."
     gui_files_info_label_id = "LabelScriptFilesInfo"
     gui_info_message_widget = "MessageScriptInfo"
 

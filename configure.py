@@ -36,7 +36,7 @@ def main(argv=sys.argv):
 
     for file in ("vcvars32.bat", "vcvars64.bat"):
         if not (Path(os.path.expandvars(VC_DIR)) / file).exists():
-            raise Exception("Visual Studio 2017 Community required!")
+            raise Exception("Visual Studio 2019 Community required!")
 
     # Create config.bat
 
