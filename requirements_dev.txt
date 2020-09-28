@@ -3,3 +3,4 @@ cx-Freeze>=6.1
 Cython>=0.29.5
 pip>=18.1
 setuptools>=40.8.0
+pygubu-designer>=0.10
