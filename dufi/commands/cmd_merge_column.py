@@ -25,7 +25,7 @@ class MergeColumnCommand(Command):
     gui_help_tooltips = {
 
         "CheckbuttonMergeColumnWithQuotes": """
-Files with proper double quotes usage are not the object
+Files with proper double quotes are not the object
 for this command. Use Repair instead.
 """
 

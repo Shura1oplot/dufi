@@ -5,15 +5,16 @@ from openpyxl.utils.datetime import CALENDAR_MAC_1904
 
 
 def read(fname, sheet=None):
-    wb = openpyxl.load_workbook(filename=fname, data_only=True, read_only=True)
+    fp = open(fname, "rb")
+    wb = openpyxl.load_workbook(fp, data_only=True, read_only=True)
+
     datemode = int(wb.excel_base_date == CALENDAR_MAC_1904)
 
     def _f(ws):
         return ws.title, datemode, _rows_iter(ws)
 
     if sheet is None:
-        ws = wb.get_active_sheet()
-        yield ws.title, _rows_iter(ws)
+        yield _f(wb.get_active_sheet())
 
     elif hasattr(sheet, "match"):
         for name in wb.sheetnames:

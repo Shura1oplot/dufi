@@ -63,7 +63,7 @@ Stop looking for a header if specified text was not found within N rows.
 """,
 
         "LabelExcelLastColumnHelp": """
-While converting ignore data after this column.
+While converting ignore all the data after this column.
 """,
 
         "LabelExcelLengthLimitHelp": """

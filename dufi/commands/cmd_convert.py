@@ -56,7 +56,6 @@ Mask rules:
 """,
 
         "CheckbuttonConvertDouledQuotes": """
-Format conversion constraints:
 Quotation marks inside text fields must be doubled.
 """
 

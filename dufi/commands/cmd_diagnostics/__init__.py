@@ -35,18 +35,18 @@ class DiagnosticsCommand(Command):
     gui_help_tooltips = {
 
         "LabelCompatTestsHelp": """
-1. DuFi Tools cannot process files with Unicode encoding (UTF-8, UTF-16, UTF-32).
-    They must be converted into ones with a single-byte encoding. Windows-1251 is a
-    good choice for almost all of Cyrillic texts.
+1. DuFi cannot process files in Unicode (UTF-8, UTF-16, UTF-32).
+    These files must be converted into ones in a single-byte encoding.
+    Windows-1251 (CP1251) is a good choice for almost all Cyrillic texts.
 2. Files must have unified style of line endings: CR+LF (Windows) or LF (Unix).
-3. Each file must end with line ending characters. If not, it indicates that the file was
-    not extracted completely (extraction process was interrupted).
-This checks can be turned off if the all files successfully passed them later.
+3. Each file must end with line ending characters. Otherwise, it indicates
+    the file was not extracted completely (extraction process was interrupted).
+These checks can be turned off if all the files successfully passed them later.
 """,
 
         "LabelCyrillicHelp": """
-If checked, better Cyrillyc encoding detection enabled.
-If not checked, non-Cyrillyc encoding can be detected.
+If checked, better Cyrillyc-only encodings detection enabled.
+If not checked, non-Cyrillyc encodings can be detected.
 """,
 
     }
@@ -65,13 +65,13 @@ If not checked, non-Cyrillyc encoding can be detected.
                 return 1
 
             if valid:
-                echo("(^_^) file is valid")
+                echo("(^_^) file is not damaged")
             elif fixable:
-                echo("(o_O) file is damaged, but not heavily (maybe)")
+                echo("(o_O) file is damaged, but can be repaired automatically")
             else:
-                echo("(X_X) file looks really bad")
+                echo("(X_X) file is damaged and cannot be repaired automatically")
 
-        echo("All files processed. See *.dufireport files.")
+        echo("All files processed. See *.dufireport for details.")
 
     @classmethod
     def _check_file(cls, file, args):
@@ -91,14 +91,14 @@ If not checked, non-Cyrillyc encoding can be detected.
 
             # check eol
             if cls._get_eol_style(file) not in ("windows", "unix"):
-                raise DiagnosticsError("file contains both Windows and Unix EOL styles")
+                raise DiagnosticsError("file contains both Windows and Unix EOLs")
 
             # check encoding
             encoding = detect_encoding(
                 file, args.lines_limit, cyrillic=not args.non_cyrillic)
 
             if encoding.lower().startswith("utf"):
-                raise DiagnosticsError("file has unicode encoding")
+                raise DiagnosticsError("file has an Unicode encoding")
 
         # count separators
         report_file = file + ".dufireport"
@@ -164,13 +164,13 @@ If not checked, non-Cyrillyc encoding can be detected.
         parser.add_argument(
             "-x", "--exclude-compat-tests",
             action="store_true",
-            help="do not perform initial checks (encoding, EOL, EOF)",
+            help="do not perform checks (encoding, EOL, EOF)",
         )
         parser.add_argument(
             "-i", "--non-cyrillic",
             action="store_true",
-            help=("csv files have characters different from characters that belong "
-                  "to Latin or Cyrillic alphabets"),
+            help=("csv files have characters different from characters that "
+                  "belong to Latin or Cyrillic alphabets"),
         )
         parser.add_argument(
             "-m", "--lines-limit",

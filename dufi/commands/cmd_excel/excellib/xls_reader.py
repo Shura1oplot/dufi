@@ -79,7 +79,7 @@ def normalize_booleans(values):
     normalized = []
 
     for value in values:
-        if value is None or value is '':
+        if value is None or value == "":
             normalized.append(None)
         else:
             normalized.append(bool(value))
@@ -96,6 +96,10 @@ def normalize_dates(values, datemode=0):
     for v in values:
         if not v:
             normalized.append(None)
+            continue
+
+        if not isinstance(v, float):
+            normalized.append(v)
             continue
 
         v_tuple = xlrd.xldate_as_tuple(v, datemode)

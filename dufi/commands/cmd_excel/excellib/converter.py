@@ -9,6 +9,7 @@ import re
 from .utils import colno
 from .xlsx_reader import read as read_xlsx
 from .xls_reader import read as read_xls
+from .xlsb_reader import read as read_xlsb
 
 
 ENCODING = locale.getpreferredencoding()
@@ -64,17 +65,15 @@ class ExcelConverter():
         if excel_file_path.startswith("..\\"):
             excel_file_path = os.path.abspath(file_excel)
 
-        _, file_type = os.path.splitext(file_excel)
-        file_type = file_type.lstrip(".").lower()
-
-        if file_type not in ("xlsx", "xlsm", "xls"):
-            raise ValueError("unsupported file type: {}".format(file_type))
+        file_type = self._detect_file_type(file_excel)
 
         last_cell_limit = self._last_cell_limit and file_type != "xls"
 
         if file_type == "xls":
             read_excel = read_xls
-        else:
+        elif file_type == "xlsb":
+            read_excel = read_xlsb
+        else:  # xlsx. xlsm
             read_excel = read_xlsx
 
         os.makedirs(os.path.dirname(file_out), exist_ok=True)
@@ -86,6 +85,36 @@ class ExcelConverter():
 
                 extra = (excel_file_path, str(datemode), sheet_name)
                 self._write_sheet(fpo, rows, extra)
+
+    def _detect_file_type(self, file):
+        _, file_ext = os.path.splitext(file)
+        file_ext = file_ext.lstrip(".").lower()
+
+        if file_ext not in ("xls", "xlsx", "xlsm", "xlsb"):
+            raise ValueError("unsupported file type: {}".format(file))
+
+        with open(file, "rb") as fp:
+            sig = fp.read(8)
+
+        if sig == b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1":
+            file_type = "xls"
+
+        elif sig[:4] == b"\x50\x4b\x03\x04":
+            file_type = "xlsx"
+
+        else:
+            raise ValueError("unsupported file type: {}".format(file))
+
+        if file_ext == file_type:
+            return file_ext
+
+        if file_type == "xls":
+            return "xls"
+
+        if file_ext in ("xlsb", "xlsm"):
+            return file_ext
+
+        return file_type
 
     def _write_sheet(self, fpo, rows, extra=()):
         header_found = False
