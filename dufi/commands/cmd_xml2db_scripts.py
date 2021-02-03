@@ -1,6 +1,7 @@
 # [SublimeLinter @python:3]
 
 import os
+import win32console
 
 from .base import Command
 from .xml2db import XML2DB
@@ -31,7 +32,8 @@ class XML2DBScripts(XML2DB):
             server, database, compressed)
 
     def _create_sql_script(self, file, database):
-        fp = open(file, "w")
+        cp = win32console.GetConsoleOutputCP()
+        fp = open(file, "w", encoding="cp{}".format(cp))
 
         fp.write("USE {};\nGO\n\n".format(get_sql_name(database)))
 
@@ -141,7 +143,7 @@ class XML2DBScriptsCommand(Command):
         parser.add_argument(
             "-s", "--server",
             metavar="ADDR",
-            default="ru-mowras002",
+            default="localhost",
             help="MS SQL Server address")
 
         parser.add_argument(

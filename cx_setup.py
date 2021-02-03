@@ -5,8 +5,8 @@ import os
 from cx_Freeze import setup, Executable
 
 
-if sys.version_info[:2] != (3, 7):
-    raise Exception("Python 3.7 required!")
+if sys.version_info[:2] != (3, 8):
+    raise Exception("Python 3.8 required!")
 
 
 # https://cx-freeze.readthedocs.io/en/latest/distutils.html

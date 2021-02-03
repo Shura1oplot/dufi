@@ -24,8 +24,8 @@ def main(argv=sys.argv):
 
     # Check dependencies
 
-    if sys.version_info[:2] != (3, 7):
-        print("Warning: python 3.7 is required to build exe!")
+    if sys.version_info[:2] != (3, 8):
+        print("Warning: python 3.8 is required to build exe!")
 
     buildenv = platform.uname()
 

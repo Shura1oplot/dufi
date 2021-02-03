@@ -3,6 +3,7 @@
 import os
 from itertools import zip_longest
 import re
+import win32console
 
 from .base import Command, InvalidCommandArgs
 from .sqlhelpers import sqlfmt, get_sql_name
@@ -109,7 +110,7 @@ class GenerateScriptCommand(Command):
                 echo("Progress: 100%")
 
         query = []
-        batch = ['set "SERVER=ru-mowras002"',
+        batch = ['set "SERVER=localhost"',
                  'set "DATABASE=my_database"']
 
         for file, header in headers.items():
@@ -158,7 +159,9 @@ class GenerateScriptCommand(Command):
 
         batch_file = os.path.join(base_dir, "dufi_upload.bat")
 
-        with open(batch_file, "w", encoding="cp866") as fp:
+        cp = win32console.GetConsoleOutputCP()
+
+        with open(batch_file, "w", encoding="cp{}".format(cp)) as fp:
             fp.write("\n".join(batch))
 
         echo("Files `{}` and `{}` save into `{}`".format(
