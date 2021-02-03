@@ -32,8 +32,7 @@ class XML2DBScripts(XML2DB):
             server, database, compressed)
 
     def _create_sql_script(self, file, database):
-        cp = win32console.GetConsoleOutputCP()
-        fp = open(file, "w", encoding="cp{}".format(cp))
+        fp = open(file, "w")
 
         fp.write("USE {};\nGO\n\n".format(get_sql_name(database)))
 
@@ -70,7 +69,8 @@ class XML2DBScripts(XML2DB):
         return "varbinary(max)"
 
     def _create_bcp_script(self, file, server, database, compressed):
-        fp = open(file, "w")
+        cp = win32console.GetConsoleOutputCP()
+        fp = open(file, "w", encoding="cp{}".format(cp))
 
         fp.write("@ECHO OFF\n\n")
         fp.write('SET "SERVER={}"\n'.format(
