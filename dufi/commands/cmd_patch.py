@@ -28,13 +28,13 @@ class PatchCommand(Command):
         parser.add_argument(
             "-D", "--dry-run",
             action="store_true",
-            help=("print the results of applying the patch without actually "
+            help=("print the result of applying a patch without actually "
                   "changing the file"),
         )
         parser.add_argument(
             "-R", "--reverse",
             action="store_true",
-            help="reverse applied patch",
+            help="reverse an applied patch",
         )
         parser.add_argument(
             "-f", "--force",
@@ -44,7 +44,7 @@ class PatchCommand(Command):
         parser.add_argument(
             "-r", "--retry",
             action="store_true",
-            help=("wait and retry to open the dump file if it is locked by other "
+            help=("wait and retry to open the file if it is locked by other "
                   "process"),
         )
         parser.add_argument(
@@ -54,6 +54,6 @@ class PatchCommand(Command):
         )
         parser.add_argument(
             "csv_file",
-            help="csv file to process",
+            help="file to process",
             **guiopt(action="browse_file")
         )

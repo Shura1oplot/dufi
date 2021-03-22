@@ -17,11 +17,12 @@ class DiagnosticsCommand(Command):
 
     cli_command = "csv-check"
     cli_command_aliases = ("diagnostics", "diag", "dg")
-    cli_command_help = "validate structure of csv files and output defected lines"
+    cli_command_help = ("validate structure of csv files and save numbers "
+                        "of corrupted rows")
 
     gui_order = 1
     gui_command = "CSV Check"
-    gui_description = "Validate structure of CSV files."
+    gui_description = "Validate structure of CSV files"
     gui_files_info_label_id = "LabelDiagnosticsFilesInfo"
     gui_info_message_widget = "MessageDiagnosticsInfo"
 
@@ -41,7 +42,7 @@ class DiagnosticsCommand(Command):
 2. Files must have unified style of line endings: CR+LF (Windows) or LF (Unix).
 3. Each file must end with line ending characters. Otherwise, it indicates
     the file was not extracted completely (extraction process was interrupted).
-These checks can be turned off if all the files successfully passed them later.
+These checks can be turned off if all the files successfully passed them before.
 """,
 
         "LabelCyrillicHelp": """
@@ -65,13 +66,13 @@ If not checked, non-Cyrillyc encodings can be detected.
                 return 1
 
             if valid:
-                echo("(^_^) file is not damaged")
+                echo("(^_^) file is valid")
             elif fixable:
-                echo("(o_O) file is damaged, but can be repaired automatically")
+                echo("(-_-) file is corrupted; can be repaired automatically")
             else:
-                echo("(X_X) file is damaged and cannot be repaired automatically")
+                echo("(X_X) file is corrupted; should be repaired manually")
 
-        echo("All files processed. See *.dufireport for details.")
+        echo("All files are processed. See *.dufireport for details.")
 
     @classmethod
     def _check_file(cls, file, args):

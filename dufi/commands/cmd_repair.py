@@ -12,11 +12,11 @@ class RepairCommand(Command):
 
     cli_command = "csv-repair"
     cli_command_aliases = ("repair", )
-    cli_command_help = "detect and repair defected lines in csv file"
+    cli_command_help = "find and repair corrupted rows in a CSV file"
 
     gui_order = 2
     gui_command = "CSV Repair"
-    gui_description = "Repair incorrect structure of CSV files."
+    gui_description = "Repair corrupted CSV files"
     gui_files_info_label_id = "LabelRepairFilesInfo"
     gui_info_message_widget = "MessageRepairInfo"
 
@@ -61,13 +61,14 @@ class RepairCommand(Command):
         parser.add_argument(
             "-b", "--doubled-qualifier",
             action="store_true",
-            help=("double quotes in values are doubled in the csv file "
+            help=("double quotes in values are doubled "
                   "(--with-qualifier must be set)"),
         )
         parser.add_argument(
             "-e", "--remove-embedded-newlines",
             action="store_true",
-            help="remove newlines embedded into fields (--with-qualifier must be set)",
+            help=("remove newlines embedded into text fields "
+                  "(--with-qualifier must be set)",)
         )
         cls._add_files_arguments(parser)
 

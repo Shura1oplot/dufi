@@ -16,11 +16,11 @@ class ConvertCommand(Command):
 
     cli_command = "convert"
     cli_command_aliases = ()
-    cli_command_help = "convert an encoding and a format of the files (batch mode)"
+    cli_command_help = "convert files' encoding and format (batch mode)"
 
     gui_order = 5
     gui_command = "Convert & Merge"
-    gui_description = "Convert an encoding and a format (CSV -> TSV) of the files"
+    gui_description = "Convert files' encoding and format (CSV -> TSV)"
     gui_files_info_label_id = "LabelConvertFilesInfo"
     gui_info_message_widget = "MessageConvertInfo"
 
@@ -50,13 +50,13 @@ Buttons:
 Mask rules:
  Each ! will be replaced by a part of the full file path:
  1st ! - directory, 2nd ! - name w/o extension, 3rd ! - file extension
- For example, we are going to process: 'C:\\JET\\journal_entries.csv'.
+ For example, we processing: 'C:\\JET\\journal_entries.csv'.
  With mask '!\\!_NEW.!' output file will be 'C:\\JET\\journal_entries_NEW.csv'.
  With mask '!\\NEW\\!.!' output file will be 'C:\\JET\\NEW\\journal_entries.csv.
 """,
 
         "CheckbuttonConvertDouledQuotes": """
-Quotation marks inside text fields must be doubled.
+Quotation marks inside text fields must be doubled
 """
 
     }
@@ -113,28 +113,29 @@ Quotation marks inside text fields must be doubled.
         parser.add_argument(
             "-c", "--convert-format",
             action="store_true",
-            help="convert format of files from CSV to TSV"
+            help="convert CSV to TSV"
         )
         parser.add_argument(
             "-n", "--add-filename",
             action="store_true",
-            help="add filename as the first column"
+            help="add `file name` as the first column"
         )
         parser.add_argument(
             "-d", "--drop-first-row",
             action="store_true",
-            help="drop first row of each file"
+            help="drop the first row of each file"
         )
         parser.add_argument(
             "-D", "--except-first-file",
             action="store_true",
-            help="exclude first file from dropping header row"
+            help=("do not drop the first row of the first file (keep a common "
+                  "header for all files)")
         )
         parser.add_argument(
             "-o", "--output",
             default="!\\!_NEW.!",
             metavar="FILE_MASK",
-            help="specify output files mask (default: !\\!_NEW.!)",
+            help="specify an output files mask (default: !\\!_NEW.!)",
             **guiopt(action="browse_file")
         )
 

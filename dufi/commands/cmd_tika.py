@@ -20,7 +20,7 @@ class TikaCommand(Command):
 
     cli_command = "tika"
     cli_command_aliases = ()
-    cli_command_help = "extract text from all kind of documents"
+    cli_command_help = "extract text from any kind of documents"
 
     ############################################################################
 

@@ -12,11 +12,11 @@ class ScriptCommand(Command):
 
     cli_command = "excel-to-csv"
     cli_command_aliases = ("xl2csv", )
-    cli_command_help = "batch convert of Excel spreadsheets into CSV files"
+    cli_command_help = "convert Excel files into CSV files"
 
     gui_order = 10
     gui_command = "Excel to CSV"
-    gui_description = "Convert Excel spreadsheets into CSV files."
+    gui_description = "Convert Excel files into CSV files"
     gui_files_info_label_id = "LabelExcelFilesInfo"
     gui_info_message_widget = "MessageExcelInfo"
 
@@ -31,11 +31,12 @@ class ScriptCommand(Command):
 
         "LabelExcelOutputWarning": """
 Output files will not be merged but rewritten!
-Use "Convert & Merge" command to merge CSV files.
+Use the "Convert & Merge" command to merge CSV files
 """,
 
         "LabelExcelSheetHelp": """
-Specify sheet name or name mask ('*' can be used for matching any substring).
+Specify a sheet name or a name mask
+('*' can be used for matching any substring)
 """,
 
         "LabelExcelOutputHelp": """
@@ -47,37 +48,37 @@ With mask '!\\NEW\\!.!' output file will be 'C:\\JET\\NEW\\journal_entries.csv.
 """,
 
         "LabelExcelRowStartHelp": """
-Start converting sheet from Nth row (skip N-1 first rows).
+Start converting a sheet from Nth row (skip N-1 first rows)
 """,
 
         "LabelExcelRowStopHelp": """
-Stop converting sheet reaching Nth row.
+Stop converting a sheet reaching Nth row
 """,
 
         "LabelExcelFindHeaderHelp": """
-Start converting sheet from the row which contains specified text.
+Start converting a sheet from the row which contains the specified text
 """,
 
         "LabelExcelFindHeaderLimitHelp": """
-Stop looking for a header if specified text was not found within N rows.
+Stop looking for a header if the specified text was not found within N rows
 """,
 
         "LabelExcelLastColumnHelp": """
-While converting ignore all the data after this column.
+While converting ignore all the data after this column
 """,
 
         "LabelExcelLengthLimitHelp": """
-Limit length of each value by maximum length specified.
-If length of value is greater, it will be truncated.
+Limit length of each value by the maximum length specified
+If the length of the value is greater, it will be truncated
 """,
 
         "LabelExcelTruncate1kHelp": """
 Specify column names (divided by a comma) whose values will be truncated to
-1000 characters.
+1000 characters
 """,
 
         "CheckbuttonExcelFixDataRange": """
-Enable this option if your Excel sheets have a lot of of empty lines in the end.
+Enable this option if your Excel sheets have a lot of empty lines in the end
 """,
 
     }
@@ -147,12 +148,12 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
             type=int,
             default=0,
             metavar="N",
-            help="stop converting on reaching N row in excel sheet",
+            help="stop converting on reaching N row in a sheet",
         )
         parser.add_argument(
             "-x", "--find-header",
             metavar="TEXT",
-            help="start converting from the row which contains specified text",
+            help="start converting from the row which contains the specified text",
         )
         parser.add_argument(
             "-m", "--find-header-limit",
@@ -164,7 +165,7 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
         parser.add_argument(
             "-c", "--last-column",
             metavar="COL",
-            help="convert data which lays between A and COL",
+            help="convert data which lays between `A` and a specified column",
         )
         parser.add_argument(
             "-i", "--length-limit",
@@ -219,14 +220,14 @@ Enable this option if your Excel sheets have a lot of of empty lines in the end.
 
             except (ValueError, AssertionError):
                 raise InvalidCommandArgs(
-                    "{} must be non-negative integer number.".format(var_desc))
+                    "{} must be non-negative integer number".format(var_desc))
 
         last_column = var.excel_last_column.strip().upper()
 
         if last_column:
             if not re.match(r"[A-Z]{1,3}|\d+", last_column):
                 raise InvalidCommandArgs(
-                    "Invalid value of last column! Must be A..XFD or a number.")
+                    "Invalid value of last column! Must be A..XFD or a number")
 
         for var_name, var_desc in (("excel_truncate_1k", "Truncate 1k"),
                                    ("excel_truncate_4k", "Truncate 4k")):

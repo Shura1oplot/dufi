@@ -13,7 +13,7 @@ class OtherCommand(Command):
 
     gui_order = 12
     gui_command = "Other..."
-    gui_description = "All available DuFi commands."
+    gui_description = "Available DuFi commands"
     gui_files_info_label_id = "LabelOtherFilesInfo"
     gui_info_message_widget = None
 

@@ -11,7 +11,7 @@ class XML2DBCommand(Command):
 
     cli_command = "xml2db-convert"
     cli_command_aliases = ()
-    cli_command_help = "convert XML files into flat files"
+    cli_command_help = "convert XML files into flat text files"
 
     ############################################################################
 

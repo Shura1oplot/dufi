@@ -11,11 +11,12 @@ class CRToSpaceCommand(Command):
 
     cli_command = "fix-eol"
     cli_command_aliases = ("cr-to-space", )
-    cli_command_help = "replace CR character by Space"
+    cli_command_help = "replace CR character by space"
 
     gui_order = 6
     gui_command = "Fix EOL"
-    gui_description = "Convert in place CR+LF lines ending style to LF only."
+    gui_description = ("Convert the 'CR+LF' lines ending style to the LF only "
+                       "(in place).")
     gui_files_info_label_id = "LabelCRToSpaceFilesInfo"
     gui_info_message_widget = "MessageCRToSpaceInfo"
 

@@ -12,11 +12,11 @@ class MergeColumnCommand(Command):
 
     cli_command = "csv-merge-column"
     cli_command_aliases = ("merge-column", "mc")
-    cli_command_help = "remove field separator from values in one column"
+    cli_command_help = "remove a field separator from values in a column"
 
     gui_order = 3
     gui_command = "CSV Merge Column"
-    gui_description = "Merge text value spreaded into several columns."
+    gui_description = "Merge a text value spreaded into several columns"
     gui_files_info_label_id = "LabelMergeColumnFilesInfo"
     gui_info_message_widget = "MessageMergeColumnInfo"
 
@@ -26,7 +26,7 @@ class MergeColumnCommand(Command):
 
         "CheckbuttonMergeColumnWithQuotes": """
 Files with proper double quotes are not the object
-for this command. Use Repair instead.
+for this command; use the Repair command instead
 """
 
     }

@@ -13,9 +13,9 @@ from ..utils import echo
 
 class MergeCSVCommand(Command):
 
-    cli_command = "merge-csv"
+    cli_command = "union-csv"
     cli_command_aliases = ()
-    cli_command_help = "merge a number of CSV files into one using column names"
+    cli_command_help = "union CSV files into a single file using column names"
 
     # gui_order = 5
     # gui_command = "Merge CSV"

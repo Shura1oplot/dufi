@@ -11,11 +11,11 @@ class OracleFixCommand(Command):
 
     cli_command = "oracle-fix"
     cli_command_aliases = ("oracle", )
-    cli_command_help = "repair files with EOLs placed each N characters"
+    cli_command_help = "repair files with an EOL placed each N characters"
 
     gui_order = 4
     gui_command = "Fix Oracle Extraction"
-    gui_description = "Repair files with EOLs placed each 80 or 100 characters."
+    gui_description = "Repair files with an EOL placed each 80 or 100 characters"
     gui_files_info_label_id = "LabelOracleFilesInfo"
     gui_info_message_widget = "MessageOracleInfo"
 

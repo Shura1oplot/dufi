@@ -15,11 +15,12 @@ class GenerateScriptCommand(Command):
 
     cli_command = "create-script"
     cli_command_aliases = ("create-upload-script", "crupsc", )
-    cli_command_help = "create SQL script and bcp batch for data uploading"
+    cli_command_help = "create a SQL script and a bcp BAT file for data uploading"
 
     gui_order = 9
     gui_command = "Create Stript"
-    gui_description = "Create 'CREATE TABLE' SQL script and data uploading BAT script."
+    gui_description = ("Create the 'CREATE TABLE' SQL script and a BAT file "
+                       "for data uploading")
     gui_files_info_label_id = "LabelScriptFilesInfo"
     gui_info_message_widget = "MessageScriptInfo"
 
@@ -28,7 +29,7 @@ class GenerateScriptCommand(Command):
     gui_default = {"script_header": 1}
 
     gui_help_tooltips = {
-        "CheckbuttonScriptWithQuotes": "Not supported by BULK INSERT.",
+        "CheckbuttonScriptWithQuotes": "Not supported by BULK INSERT",
     }
 
     ############################################################################
@@ -48,7 +49,7 @@ class GenerateScriptCommand(Command):
             table_name = re.sub(regex_fname, regex_table, os.path.basename(file))
 
             if not table_name:
-                raise ValueError("Cannot determine table name: {}".format(file_name))
+                raise ValueError("Cannot find table name: {}".format(file_name))
 
         base_dir = os.path.dirname(files[0])
 
@@ -118,7 +119,7 @@ class GenerateScriptCommand(Command):
             table_name = re.sub(regex_fname, regex_table, os.path.basename(file))
 
             if not table_name:
-                raise ValueError("Cannot determine table name: {}".format(file_name))
+                raise ValueError("Cannot find table name: {}".format(file_name))
 
             bcp_cmd = ('bcp "[%DATABASE%].dbo.{}" in "{}" -S "%SERVER%" '
                        '-T -m 0 -c -C 1251 -k').format(
@@ -164,7 +165,7 @@ class GenerateScriptCommand(Command):
         with open(batch_file, "w", encoding="cp{}".format(cp)) as fp:
             fp.write("\n".join(batch))
 
-        echo("Files `{}` and `{}` save into `{}`".format(
+        echo("Files `{}` and `{}` saved into `{}`".format(
             os.path.basename(query_file),
             os.path.basename(batch_file),
             base_dir))
@@ -184,18 +185,18 @@ class GenerateScriptCommand(Command):
             "-b", "--regex-table",
             default=r"\1",
             metavar="MASK",
-            help="mask to format table name (default: '\\1')",
+            help="table name group number in `--regex-fname` (default: '\\1')",
         )
         parser.add_argument(
             "-e", "--has-header",
             action="store_true",
-            help="dump files has headers",
+            help="files has headers",
         )
         parser.add_argument(
             "-f", "--fast-scan",
             action="store_true",
-            help=("scan first 1000 rows only (all lengths will be aligned with "
-                  "50,255,1000,4000 borders)"),
+            help=("scan only the first 1000 rows (all lengths will be round up "
+                  "with 50, 255, 1000, 4000)"),
         )
         cls._add_files_arguments(parser)
 

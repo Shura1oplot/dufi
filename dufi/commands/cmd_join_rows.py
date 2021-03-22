@@ -12,11 +12,11 @@ class JoinRowsCommand(Command):
 
     cli_command = "csv-join-rows"
     cli_command_aliases = ("join-rows", "jr")
-    cli_command_help = "merge rows which (not) start with specified (regex) pattern"
+    cli_command_help = "merge rows which (not) start with a specified (regex) pattern"
 
     gui_order = 8
     gui_command = "CSV Join Rows"
-    gui_description = "Merge rows which (not) start with specified (regex) pattern."
+    gui_description = "Merge rows which (not) start with a specified (regex) pattern"
     gui_files_info_label_id = "LabelJoinRowsFilesInfo"
     gui_info_message_widget = "MessageJoinRowsParameters"
 
@@ -117,7 +117,7 @@ class JoinRowsCommand(Command):
         parser.add_argument(
             "-p", "--pattern",
             required=True,
-            help="pattern to match beginning of each line",
+            help="pattern to match the beginning of each row",
         )
         parser.add_argument(
             "-r", "--regex",
