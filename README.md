@@ -27,6 +27,7 @@ Method 2:
 1. build_tlb.bat
 1. Run command prompt in admin mode
 1. Activate conda environment
+1. python "%CONDA_EXE%\\..\\clear_comtypes_cache.py" -y
 1. python gen_comtypes_cache.py
 1. Switch back to command prompt in user mode
 1. build_exe.bat

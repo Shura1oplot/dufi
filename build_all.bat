@@ -7,6 +7,7 @@ IF ERRORLEVEL 1 GOTO :EOF
 CALL build_lib.bat
 CALL build_tlb.bat
 
+python "%CONDA_EXE%\..\clear_comtypes_cache.py" -y
 python gen_comtypes_cache.py
 IF ERRORLEVEL 1 GOTO :EOF
 
