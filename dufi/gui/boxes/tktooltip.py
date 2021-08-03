@@ -65,6 +65,7 @@ class attach_tooltip_delay(object):
         text = self.callback()
 
         if text is not None:
-            self.tooltip.showtip(str(text))
+            self.tooltip.text = text
+            self.tooltip.showtip()
 
         self.last_id = None
