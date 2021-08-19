@@ -12,10 +12,10 @@ import json
 import subprocess
 
 # cx_freeze hack for lxml
-import ctypes
-ctypes.WinDLL("libxslt.dll")
-ctypes.WinDLL("libexslt.dll")
-ctypes.WinDLL("libxml2.dll")
+# import ctypes
+# ctypes.WinDLL("libxslt.dll")
+# ctypes.WinDLL("libexslt.dll")
+# ctypes.WinDLL("libxml2.dll")
 from lxml import etree
 
 

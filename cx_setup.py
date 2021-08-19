@@ -13,7 +13,7 @@ if sys.version_info[:2] != (3, 8):
 build_exe_options = {
     "build_exe": os.path.abspath("build_exe"),
     "packages": ["decimal", "gzip", "idna", "lxml"],  # lxml._elementpath?
-    "excludes": ["Tkinter", "numpy", "pandas", "multiprocessing", "_ssl"],
+    "excludes": ["Tkinter", "numpy", "pandas", "multiprocessing", "_ssl", "Cython"],
     "include_msvcr": True,
 }
 

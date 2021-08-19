@@ -22,14 +22,16 @@ def main(argv=sys.argv):
         else:
             file.rename(target_dll)
 
-    Path("build_exe/lib/python37.dll").rename("build_exe/python37.dll")
+    Path("build_exe/lib/python38.dll").rename("build_exe/python38.dll")
 
     for mask in ("*.c", "*.pyx", "*.pxx"):
         for file in Path("build_exe/lib/dufi/commands").glob(mask):
             file.unlink()
 
     shutil.rmtree("build_exe/lib/distutils/command")
-    shutil.rmtree("build_exe/lib/tkinter/tk/demos")
+    shutil.rmtree("build_exe/lib/tkinter/tk8.6/demos")
+
+    Path("build_exe/lib/libcrypto-1_1-x64.dll").unlink()
 
     print("cx_clean.py: done!")
 
